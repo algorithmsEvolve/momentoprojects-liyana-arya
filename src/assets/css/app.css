@@ -1,0 +1,32 @@
+/* define colors */
+:root {
+  --primary: #3F6D97;
+  --primary-darker: #213751;
+  --secondary: #70B9D7;
+  --gold: #D4AF37;
+}
+
+/* define fonts */
+@font-face {
+  font-family: 'AntsValley-Regular';
+  src: url("../fonts/ants_valley/ants_valley.otf");
+}
+
+/* all */
+* {
+  overflow-x: hidden;
+}
+
+.cover-container {
+ min-height: 100vh;
+ max-height:100vh;
+ min-width: 100vw;
+ max-width: 100vw;
+ background: url("../app/background.svg");
+ background-repeat: no-repeat;
+ background-size: cover;
+}
+
+.component-blocker {
+  position: relative;
+}
