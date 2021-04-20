@@ -1,55 +1,24 @@
 /* both */
 
 /* mobile  */
-.butterfly1.mobile {
-    position: absolute;
-    width: 20vw;
-    right: 13vw;
-    z-index: 1;
-}
-
-.butterfly2.mobile {
-    position: absolute;
-    width: 15vw;
-    right: 3vw;
-    top: 17vh;
-    z-index: 1;
-}
-
-.butterfly3.mobile {
-    position: absolute;
-    width: 25vw;
-    left: 3vw;
-    bottom: -24vh;
-    z-index: 1;
-}
-
-.lily1.mobile {
-    position: absolute;
-    width: 30vw;
-    left: 3vw;
-    z-index: 1;
-}
-
-.lily2.mobile {
-    position: absolute;
-    width: 36vw;
-    bottom: -24vh;
-    right: 0;
-    z-index: 1;
-}
 
 .cover-content.mobile {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    padding: 0 1rem;
+    height: 100vh;
+    align-items: center;
     text-align: center;
 }
 
+.cover-middle {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
 .cover-content.mobile h1.cover-title.mobile, .cover-yth.mobile {
-    font-size: 1.3em;
+    font-size: 1.2em;
     font-weight: 400;
     color: var(--primary);
 }
@@ -89,40 +58,14 @@ h1.cover-title.mobile {
     margin: 3.5em 0;
 }
 
-.button-buka-undangan.mobile {
-    padding: 14px 2vw;
-    margin: 2vh 0;
-    border: 1px solid var(--primary);
-    border-radius: 20px;
-}
-
-.button-buka-undangan.mobile:hover {
-    background-color: var(--primary);
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.button-buka-undangan.mobile:hover .button-bu-text.mobile {
-    color: white !important;
-    transition: 0.3s;
-}
-
-.button-bu-text.mobile {
-    color: var(--primary);
-    font-size: 1em;
-}
-
-.button-bu-icon.mobile {
-    display: flex;
-    justify-content: center;
-}
-
 .cover-email-icon.mobile {
+    align-self: center;
     padding: 0 10px;
     width: 1.5rem;
 }
 
 .cover-email-icon-open.mobile {
+    align-self: center;
     padding: 0 12px;
     width: 1.25rem;
 }

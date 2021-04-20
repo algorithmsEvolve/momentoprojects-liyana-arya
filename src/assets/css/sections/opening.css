@@ -1,0 +1,76 @@
+.opening-logo-wrapper {
+    text-align: center;
+}
+
+.opening-quotes {
+    padding: .3rem 1.3rem;
+}
+
+.opening-quotes p {
+    text-align: center;
+    color: var(--primary);
+    font-size: .8em;
+}
+
+.opening-quotes p.opening-surat {
+    margin: .3rem 0;
+    text-align: center;
+    color: var(--primary);
+    font-weight: bolder;
+    font-size: .8em;
+}
+
+.opening-photo-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.opening-photo-container {
+    text-align: center;
+    padding: 0 .25rem;
+}
+
+.opening-nama {
+    padding: .8rem 0;
+    color: var(--primary);
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.opening-nama2 {
+    color: var(--gold);
+    font-size: .8rem;
+    font-weight: 500;
+}
+
+.opening-event-group {
+    padding: 0 1rem;
+}
+
+.opening-tanggal-content {
+    display: table;
+    margin: 0 auto;
+}
+
+.opening-tanggal-group {
+    display: flex;
+    padding: .2rem 0;
+}
+
+.opening-tanggal-font {
+    font-size: .8rem;
+    font-weight: 400;
+    color: var(--primary);
+    align-self: center;
+}
+
+.opening-icon {
+    padding: 0 .5rem;
+}
+
+.opening-icon-top {
+    padding-right: .5rem;
+    position: relative;
+    top: 0;
+}

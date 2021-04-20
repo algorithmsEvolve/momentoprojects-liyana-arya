@@ -1,12 +1,98 @@
 <template>
-  <div class="component-blocker">
-    <div style="display:flex;justify-content-center">
+  <div>
+    <div class="opening-logo-wrapper">
       <img
         src="../assets/app/LA.svg"
         alt="LA logo"
         class="LA-logo"
         :class="$mq"
       />
+    </div>
+
+    <div class="opening-quotes">
+      <div class="opening-quote-text">
+        <p>
+          “Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu
+          isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa
+          tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan
+          sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat
+          tanda-tanda bagi kaum yang berfikir.”
+        </p>
+        <p class="opening-surat">(Ar-Rum: 21)</p>
+      </div>
+      <div class="opening-photo">
+        <div class="opening-photo-wrapper">
+          <div class="opening-photo-container">
+            <img
+              src="../assets/app/opening-liyana.svg"
+              alt="LA logo"
+              class="opening-photo"
+              :class="$mq"
+            />
+            <h6 class="opening-nama">Liyana Adhiningrum</h6>
+            <h6 class="opening-nama2">Putri Pertama:</h6>
+            <h6 class="opening-nama2">Mudjijadi & Lilis Suryanti (Alm.)</h6>
+          </div>
+          <div class="opening-photo-container">
+            <img
+              src="../assets/app/opening-arya.svg"
+              alt="LA logo"
+              class="opening-photo"
+              :class="$mq"
+            />
+            <h6 class="opening-nama">Arya Ghiri</h6>
+            <h6 class="opening-nama2">Putra Kedua:</h6>
+            <h6 class="opening-nama2">Sumarmo & Budi Rahayu</h6>
+          </div>
+        </div>
+      </div>
+      <div class="opening-tanggal">
+        <h6 class="opening-nama">yang diselenggarakan pada :</h6>
+        <div class="opening-tanggal-content">
+          <div class="opening-event-group">
+            <div class="opening-tanggal-group">
+              <img
+                src="../assets/icons/calendar.svg"
+                alt="calendar-icon"
+                class="opening-icon"
+              />
+              <h6 class="opening-tanggal-font">Sabtu, 05 Juni 2021</h6>
+            </div>
+            <div class="opening-tanggal-group">
+              <img
+                src="../assets/icons/clock.svg"
+                alt="clock-icon"
+                class="opening-icon"
+              />
+              <h6 class="opening-tanggal-font">12.00 - 14.00 WIB</h6>
+            </div>
+            <div class="opening-tanggal-group">
+              <div class="opening-icon-top">
+                <img
+                  src="../assets/icons/map-marker.svg"
+                  alt="map-marker-icon"
+                  class="opening-icon"
+                />
+              </div>
+              <h6 class="opening-tanggal-font">
+                Saung Makan Jagarawa<br />Jl. KH Hasyim Ashari No.99,
+                RT.002/RW.009, Cipondoh, Kota Tangerang
+              </h6>
+            </div>
+          </div>
+        </div>
+        <div class="button-buka-undangan" :class="$mq">
+          <div class="button-bu-icon" :class="$mq">
+            <img
+              src="../assets/icons/clipboard.svg"
+              alt="email-icon"
+              class="button-icon"
+              :class="$mq"
+            />
+            <div class="button-bu-text" :class="$mq">Catat di Calendar</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>

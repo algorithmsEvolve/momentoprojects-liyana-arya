@@ -1,39 +1,7 @@
 <template>
-  <div class="component-blocker">
-    <div class="vector">
-      <img
-        src="../assets/app/lily-1.svg"
-        alt="lily1-vector"
-        class="lily1"
-        :class="$mq"
-      />
-      <img
-        src="../assets/app/butterflies-1.svg"
-        alt="butterfly1-vector"
-        class="butterfly1"
-        :class="$mq"
-      />
-      <img
-        src="../assets/app/butterflies-2.svg"
-        alt="butterfly2-vector"
-        class="butterfly2"
-        :class="$mq"
-      />
-      <img
-        src="../assets/app/butterflies-3.svg"
-        alt="butterfly3-vector"
-        class="butterfly3"
-        :class="$mq"
-      />
-      <img
-        src="../assets/app/lily-2.svg"
-        alt="lily2-vector"
-        class="lily2"
-        :class="$mq"
-      />
-    </div>
-    <!-- end vector background -->
-    <div class="cover-content overflow-hidden" :class="$mq">
+  <!-- end vector background -->
+  <div class="cover-content overflow-hidden" :class="$mq">
+    <div class="cover-middle">
       <h1 class="cover-title" :class="$mq">Undangan Pernikahan</h1>
       <div class="cover-inside" :class="$mq">
         <h1 class="cover-name-1" :class="$mq">Liyana</h1>
