@@ -1,15 +1,29 @@
-/* define colors */
+/* define variables */
 :root {
+  /* define colors */
   --primary: #3F6D97;
   --primary-darker: #213751;
   --secondary: #70B9D7;
   --gold: #D4AF37;
+
+  /* define font size */
+  --font-12: .8rem;
+  --font-12-lg: 1rem;
+  --font-16: 1.2rem;
+  --font-40: 3.5rem;
+  --font-30: 2rem;
+  --font-50: 5rem;
 }
 
 /* define fonts */
 @font-face {
   font-family: 'AntsValley-Regular';
   src: url("../fonts/ants_valley/ants_valley.otf");
+}
+
+@font-face {
+  font-family: 'OpenSans-Regular';
+  src: url("../fonts/open_sans/OpenSans-Regular.ttf");
 }
 
 /* all */
@@ -47,7 +61,7 @@
   position: absolute;
   width: 25vw;
   left: 3vw;
-  bottom: -24vh;
+  bottom: -20vh;
   z-index: 1;
 }
 
@@ -61,7 +75,7 @@
 .lily2.mobile {
   position: absolute;
   width: 36vw;
-  bottom: -24vh;
+  bottom: -14vh;
   right: 0;
   z-index: 1;
 }
@@ -86,7 +100,7 @@
 
 .button-bu-text.mobile {
   color: var(--primary);
-  font-size: 1em;
+  font-size: var(--font-12-lg);
 }
 
 .button-bu-icon.mobile {

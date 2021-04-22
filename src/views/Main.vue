@@ -4,6 +4,7 @@
     <background />
     <cover />
     <opening />
+    <times />
   </div>
 </template>
 
@@ -11,12 +12,14 @@
 import Background from "../components/Background";
 import Cover from "../components/Cover";
 import Opening from "../components/Opening";
+import Times from "../components/Times.vue";
 
 export default {
   components: {
     background: Background,
     cover: Cover,
     opening: Opening,
+    times: Times,
   },
 };
 </script>

@@ -1,0 +1,40 @@
+.countdown-container {
+    padding: .6rem 1.3rem;
+}
+
+.countdown-wrapper {
+    padding: 8px 6vw;
+    margin: 2vh 0;
+    border: 1px solid var(--secondary);
+    border-radius: 20px;
+}
+
+.count {
+    display: flex;
+    justify-content: space-around;
+}
+
+.time {
+    text-align: center;
+}
+
+.label {
+    font-size: var(--font-12);
+    font-weight: 400;
+    color: var(--gold);
+}
+
+.value {
+    padding: 4px 0 0 0;
+    font-family: "AntsValley-Regular";
+    font-size: var(--font-30);
+    color: var(--gold);
+}
+
+.separator {
+    font-family: "OpenSans-Regular";
+    font-size: var(--font-30);
+    align-self: center;
+    color: var(--gold);
+    font-weight: 100 !important;
+}

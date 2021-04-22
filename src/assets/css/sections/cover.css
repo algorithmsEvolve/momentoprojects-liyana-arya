@@ -18,7 +18,7 @@
 }
 
 .cover-content.mobile h1.cover-title.mobile, .cover-yth.mobile {
-    font-size: 1.2em;
+    font-size: var(--font-16);
     font-weight: 400;
     color: var(--primary);
 }
@@ -35,21 +35,21 @@ h1.cover-title.mobile {
 .cover-name-1.mobile {
     color: var(--primary-darker);
     font-weight: normal;
-    font-size: 3.5em;
+    font-size: var(--font-40);
     margin-right: 40vw;
 }
 
 .cover-name-2.mobile {
     color: var(--primary-darker);
     font-weight: normal;
-    font-size: 3.5em;
+    font-size: var(--font-40);
     margin-left: 40vw;
 }
 
 .cover-name-and.mobile {
     color: var(--gold);
     font-weight: lighter;
-    font-size: 5em;
+    font-size: var(--font-50);
     padding: 0;
     margin: -0.5em 0;
 }
