@@ -85,7 +85,7 @@
           <div class="button-bu-icon" :class="$mq">
             <img
               src="../assets/icons/clipboard.svg"
-              alt="email-icon"
+              alt="clipboard-icon"
               class="button-icon"
               :class="$mq"
             />

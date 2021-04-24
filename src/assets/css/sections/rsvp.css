@@ -1,0 +1,63 @@
+p.rsvp {
+    font-size: 2rem;
+    font-family: var(--ants);
+    text-align: center;
+    padding: 20px 0;
+}
+
+.form-rsvp-container {
+    background-color: white;
+    border: 1px solid var(--secondary);
+    border-radius: 20px;
+}
+
+p.rsvp-title {
+    padding: 22px 25px 0 12.5px;
+    text-align: center;
+    font-size: var(--font-12);
+    color: var(--primary);
+    font-family: var(--open-sans);
+}
+
+.rsvp-title {
+    width: 100%;
+}
+
+.rsvp-header-container {
+    display: flex;
+    padding: 0 0 15px 0;
+}
+
+img.lily3-icon {
+    width: 5rem;
+}
+
+.form-rsvp-wrapper {
+    padding: 0 25px;
+}
+
+.rsvp-input input, .rsvp textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 18px;
+    border: 1.6px solid var(--secondary);
+    border-radius: 15px;
+}
+
+.rsvp-input input::placeholder, rsvp-input textarea::placeholder {
+    color: var(--muted);
+}
+
+.rsvp-label {
+    padding: 0 0 4px 0;
+}
+
+.rsvp-label p {
+    font-size: var(--font-12);
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.form-group {
+    padding: 0 0 15px 0;
+}

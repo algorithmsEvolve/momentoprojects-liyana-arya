@@ -5,6 +5,7 @@
   --primary-darker: #213751;
   --secondary: #70B9D7;
   --gold: #D4AF37;
+  --muted: #B1B1B1;
 
   /* define font size */
   --font-12: .8rem;
@@ -13,6 +14,10 @@
   --font-40: 3.5rem;
   --font-30: 2rem;
   --font-50: 5rem;
+
+  /* define font family */
+  --open-sans: "OpenSans-Regular";
+  --ants: "AntsValley-Regular";
 }
 
 /* define fonts */
@@ -39,6 +44,10 @@
   background: url("../app/background.svg");
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.padding-container {
+  padding: .3rem 1.3rem;
 }
 
 /* mobile */
@@ -110,7 +119,7 @@
 
 .button-icon.mobile {
   align-self: center;
-  padding: 0 10px;
+  padding: 0 10px 0 0;
   width: 1.5rem;
 }
 

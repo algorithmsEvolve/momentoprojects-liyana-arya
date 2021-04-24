@@ -1,0 +1,9 @@
+.kisah-kami-text p {
+    font-size: 2rem;
+    font-family: var(--ants);
+    text-align: center;
+}
+
+.gallery-container {
+    padding: 1rem 0;
+}
