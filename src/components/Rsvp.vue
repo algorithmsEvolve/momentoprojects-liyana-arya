@@ -49,8 +49,74 @@
               <textarea
                 type="text"
                 name="nama"
-                placeholder="Masukkan nomor handphone..."
+                placeholder="Tulis pesanmu..."
+                cols="30"
+                rows="5"
+                wrap="off"
               />
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="rsvp-label">
+              <p>Apa kamu akan hadir?</p>
+            </div>
+            <div class="rsvp-radio-input">
+              <div>
+                <div class="radio-item">
+                  <input
+                    type="radio"
+                    id="hadir"
+                    name="kehadiran"
+                    value="true"
+                    v-model="kehadiran"
+                  />
+                  <label for="hadir" class="">Aku akan hadir</label>
+                </div>
+              </div>
+              <div>
+                <div class="radio-item">
+                  <input
+                    type="radio"
+                    id="tidak_hadir"
+                    name="kehadiran"
+                    value="false"
+                    v-model="kehadiran"
+                  />
+                  <label for="tidak_hadir">Maaf, tidak dapat hadir</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group" v-if="kehadiran == 'true'">
+            <div class="rsvp-label">
+              <p>Bagaimana kamu akan hadir?</p>
+            </div>
+            <div class="rsvp-radio-input">
+              <div>
+                <div class="radio-item">
+                  <input
+                    type="radio"
+                    id="sendiri"
+                    name="jumlah"
+                    value="1"
+                    checked
+                  />
+                  <label for="sendiri" class="">Sendiri</label>
+                </div>
+              </div>
+              <div>
+                <div class="radio-item">
+                  <input type="radio" id="berdua" name="jumlah" value="2" />
+                  <label for="berdua">Berdua</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="button-container">
+            <div class="button-buka-undangan" :class="$mq">
+              <div class="button-bu-icon" :class="$mq">
+                <div class="button-bu-text" :class="$mq">Kirim</div>
+              </div>
             </div>
           </div>
         </div>
@@ -60,7 +126,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      kehadiran: true,
+    };
+  },
+};
 </script>
 
 <style src="@/assets/css/sections/rsvp.css" scoped/>

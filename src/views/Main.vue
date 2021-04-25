@@ -8,6 +8,8 @@
     <background2 />
     <galleries />
     <rsvp />
+    <guest />
+    <floating_menu />
   </div>
 </template>
 
@@ -19,6 +21,8 @@ import Opening from "../components/Opening";
 import Times from "../components/Times";
 import Galleries from "../components/Galleries";
 import Rsvp from "../components/Rsvp";
+import Guest from "../components/Guest";
+import FloatingMenu from "../components/items/FloatingMenu";
 
 export default {
   components: {
@@ -29,6 +33,8 @@ export default {
     times: Times,
     galleries: Galleries,
     rsvp: Rsvp,
+    guest: Guest,
+    floating_menu: FloatingMenu,
   },
 };
 </script>
