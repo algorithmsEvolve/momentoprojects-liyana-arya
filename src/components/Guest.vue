@@ -4,10 +4,14 @@
       <p class="guest-title">Live Streaming</p>
       <div class="youtube-video">
         <iframe
-          src="https://www.youtube.com/embed?v=CvQmCl3wZt4&list=PLZN2wZjY_38DTwLI261pUR_GAnmCIyrgi&index=5"
-          allow="fullscreen"
-        >
-        </iframe>
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/ZbC7hvPVYYg"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
       </div>
       <div class="ucapan-doa">
         <p class="guest-title">Ucapan & Doa</p>

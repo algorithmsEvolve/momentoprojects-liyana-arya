@@ -6,9 +6,9 @@ p.rsvp {
 }
 
 .form-rsvp-container {
-    background-color: white;
-    border: 1px solid var(--secondary);
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 20px;
+    padding: 0 0 22px 0;
 }
 
 p.rsvp-title {
