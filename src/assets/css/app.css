@@ -138,3 +138,8 @@ input, textarea {
 .button-buka-undangan:hover img {
   filter: brightness(0) invert(1); 
 }
+
+/* v-viewer */
+.viewer-backdrop{
+  background-color: rgba(0, 0, 0, .8) !important;
+}

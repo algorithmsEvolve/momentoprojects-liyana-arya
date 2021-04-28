@@ -1,5 +1,5 @@
 <template>
-  <div class="padding-container">
+  <div class="padding-container" @mouseenter="isPaused = false">
     <div class="gallery-container">
       <div class="kisah-kami-text">
         <p>Kisah Kami</p>
@@ -15,7 +15,11 @@
           </div>
         </VueSlickCarousel>
       </div>
-      <div class="photo-gallery-container">
+      <div
+        class="photo-gallery-container"
+        v-viewer="options"
+        @click="isPaused = true"
+      >
         <div class="two-photo">
           <transition name="fade" mode="out-in">
             <img
@@ -66,10 +70,8 @@
 <script>
 import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
-// optional style for arrows & dots
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 import KisahKamiCard from "../components/items/KisahKamiCard";
-
 export default {
   components: {
     VueSlickCarousel,
@@ -151,6 +153,7 @@ export default {
           image: "op1.jpeg",
         },
       ],
+      isPaused: false,
     };
   },
   methods: {
@@ -170,8 +173,10 @@ export default {
   },
   created() {
     setInterval(() => {
-      this.changeImage();
-    }, 10000);
+      if (!this.isPaused) {
+        this.changeImage();
+      }
+    }, 8000);
   },
 };
 </script>
