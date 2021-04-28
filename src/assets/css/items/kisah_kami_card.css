@@ -1,0 +1,24 @@
+.kisah-kami-card-wrapper
+{
+    display: flex;
+    justify-content: center;
+}
+
+.kisah-card {
+    border: 1px solid var(--secondary);
+    border-radius: 15px;
+    padding: 0 15px;
+    height: 45vw;
+    width: 60vw;
+    text-align: center;
+    margin: 0 2vw;
+}
+
+.kisah-card-text p {
+    color: var(--secondary);
+    font-size: var(--font-12);
+}
+
+.kisah-kami-icon {
+    width: 25vw !important;
+}

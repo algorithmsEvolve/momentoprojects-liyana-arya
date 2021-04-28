@@ -1,40 +1,36 @@
-.kisah-kami-card-wrapper
-{
-    display: flex;
-    justify-content: center;
-}
-
 .kisah-kami-text p {
     font-size: 2rem;
     font-family: var(--ants);
     text-align: center;
 }
 
-.gallery-container {
-    padding: 1rem 0;
-}
-
 .kisah-kami-slider-container {
     width: 100%;
     margin: 20px auto;
-    height: 300px;
 }
 
-.kisah-card {
-    border: 1px solid var(--secondary);
-    border-radius: 15px;
-    padding: 0 15px;
-    height: 45vw;
-    width: 60vw;
+.gallery-container {
+    padding: 2.5rem 0 1rem 0;
+}
+
+.photo-gallery-container {
     text-align: center;
-    margin: 0 2vw;
 }
 
-.kisah-card-text p {
-    color: var(--secondary);
-    font-size: var(--font-12);
+.two-photo-img {
+    width: 100%;
 }
 
-.kisah-kami-icon {
-    width: 25vw !important;
+.padding-left {
+    padding: 0 0 0 3%;
+}
+
+.one-photo-img {
+    width: 100%;
+}
+
+.two-photo {
+    display: flex;
+    justify-content: center;
+    padding: 0 0 3% 0;
 }

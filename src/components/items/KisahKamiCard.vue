@@ -26,4 +26,4 @@ export default {
 };
 </script>
 
-<style src="@/assets/css/sections/gallery.css" scoped/>
+<style src="@/assets/css/items/kisah_kami_card.css" scoped/>
