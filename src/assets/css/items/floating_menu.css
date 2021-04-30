@@ -25,3 +25,8 @@
     width: 35px;
     height: 35px;
 }
+
+.fb-icon:hover {
+    cursor: pointer;
+    filter: contrast(138%) brightness(68%) saturate(81%) hue-rotate(17deg);
+}

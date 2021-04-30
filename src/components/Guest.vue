@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="live">
     <div class="padding-container">
       <p class="guest-title">Live Streaming</p>
       <div class="youtube-video">

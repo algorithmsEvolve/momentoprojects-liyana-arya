@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="opening">
     <div class="opening-logo-wrapper">
       <img
         src="../assets/app/LA.svg"

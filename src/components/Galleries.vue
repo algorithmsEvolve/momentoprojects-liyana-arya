@@ -19,6 +19,7 @@
         class="photo-gallery-container"
         v-viewer="options"
         @click="isPaused = true"
+        id="gallery"
       >
         <div class="two-photo">
           <transition name="fade" mode="out-in">
@@ -60,7 +61,7 @@
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s;
-  transition-duration: 2s;
+  transition-duration: 3s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;

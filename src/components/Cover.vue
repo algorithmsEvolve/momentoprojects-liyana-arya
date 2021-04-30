@@ -24,7 +24,9 @@
               button_hovered ? 'cover-email-icon-open' : 'cover-email-icon',
             ]"
           />
-          <div class="button-bu-text" :class="$mq">Buka Undangan</div>
+          <div class="button-bu-text" :class="$mq" @click="open()">
+            Buka Undangan
+          </div>
         </div>
       </div>
     </div>
@@ -51,6 +53,9 @@ export default {
   methods: {
     change_email_icon(bool) {
       this.button_hovered = bool;
+    },
+    open() {
+      this.$emit("input", true);
     },
   },
 };

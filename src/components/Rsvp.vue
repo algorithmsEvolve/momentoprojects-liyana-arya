@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="padding-container">
+    <div id="rsvp" class="padding-container">
       <p class="rsvp">RSVP</p>
       <div class="form-rsvp-container">
         <div class="rsvp-header-container">
@@ -23,6 +23,7 @@
             </div>
             <div class="rsvp-input">
               <input
+                autocomplete="off"
                 type="text"
                 name="nama"
                 placeholder="Masukkan nama anda..."
@@ -35,6 +36,7 @@
             </div>
             <div class="rsvp-input">
               <input
+                autocomplete="off"
                 type="text"
                 name="nama"
                 placeholder="Masukkan nomor handphone..."

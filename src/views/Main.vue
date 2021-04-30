@@ -2,14 +2,25 @@
   <div class="container bg-vector" :class="$mq">
     <!-- vector-background -->
     <background />
-    <cover />
-    <opening />
-    <times />
-    <background2 />
-    <galleries />
-    <rsvp />
-    <guest />
-    <floating_menu />
+    <transition name="fade1" mode="out-in">
+      <cover v-model="opened" v-if="!opened" />
+    </transition>
+    <br v-show="opened" />
+    <!-- <transition name="fade" mode="in-out"> -->
+    <transition name="fade2" mode="out-in">
+      <opening v-show="opened" />
+    </transition>
+    <times v-show="opened" />
+    <template v-if="opened">
+      <background2 />
+      <galleries />
+      <rsvp />
+      <guest />
+    </template>
+    <transition name="fade3" mode="out-in">
+      <floating_menu v-if="opened" />
+    </transition>
+    <!-- </transition> -->
   </div>
 </template>
 
@@ -36,7 +47,48 @@ export default {
     guest: Guest,
     floating_menu: FloatingMenu,
   },
+  watch: {
+    opened: function () {
+      import("@/assets/css/styling/overflow_scroll.css");
+    },
+  },
+  data() {
+    return {
+      opened: false,
+      test: "hidden",
+    };
+  },
 };
 </script>
 
 <style src="@/assets/css/app.css"/>
+<style>
+.fade1-enter-active,
+.fade1-leave-active {
+  transition: opacity 0;
+  transition-duration: 1s;
+}
+.fade1-enter, .fade1-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+.fade2-enter-active,
+.fade2-leave-active {
+  transition: opacity 0;
+  transition-delay: 1s;
+  transition-duration: 3s;
+}
+.fade2-enter, .fade2-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+.fade3-enter-active,
+.fade3-leave-active {
+  transition: opacity 0;
+  transition-delay: 1s;
+  transition-duration: 1s;
+}
+.fade3-enter, .fade3-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+</style>

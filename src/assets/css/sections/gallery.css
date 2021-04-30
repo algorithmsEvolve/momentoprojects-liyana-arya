@@ -15,10 +15,12 @@
 
 .photo-gallery-container {
     text-align: center;
+    min-height: 60vh;
 }
 
 .two-photo-img {
     width: 100%;
+    transition: ease 1s;
 }
 
 .padding-left {
@@ -27,10 +29,17 @@
 
 .one-photo-img {
     width: 100%;
+    transition: ease 1s;
 }
 
 .two-photo {
     display: flex;
     justify-content: center;
     padding: 0 0 3% 0;
+}
+
+.one-photo-img:hover, .two-photo-img:hover {
+    cursor: pointer;
+    transition: ease .5s;
+    transform: scale(1.05);
 }

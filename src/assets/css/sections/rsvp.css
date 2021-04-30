@@ -45,6 +45,7 @@ img.lily3-icon {
     outline: none;
     resize:unset;
     font-family: var(--poppins);
+    font-size: var(--font-12);
 }
 
 .rsvp-input input::placeholder, .rsvp-input textarea::placeholder {

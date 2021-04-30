@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="time">
     <div class="countdown-container">
       <div class="countdown-wrapper">
         <div class="count">
