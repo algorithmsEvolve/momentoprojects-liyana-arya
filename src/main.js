@@ -37,6 +37,10 @@ Vue.use(VueScrollTo, {
 });
 
 new Vue({
+  data: {
+    // declare message with an empty value
+    message: ''
+  },
   router,
   render: h => h(App)
 }).$mount('#app')

@@ -15,10 +15,19 @@
       </div>
       <div class="ucapan-doa">
         <p class="guest-title">Ucapan & Doa</p>
-        <div class="ud-wrapper">
-          <div class="nama">Kosuke</div>
-          <div class="ucapan">Selamat menempuh hidup baru!!!</div>
-        </div>
+        <template v-if="wishes_data.length">
+          <template v-for="wish in wishes_data">
+            <div class="ud-wrapper" :key="wish.id">
+              <div class="nama">{{ wish.name }}</div>
+              <div class="ucapan">{{ wish.message }}</div>
+            </div>
+          </template>
+        </template>
+        <template v-else>
+          <div class="ud-wrapper">
+            <div class="ucapan">Belum ada ucapan.</div>
+          </div>
+        </template>
       </div>
       <div class="form-ucapan-wrapper">
         <div class="form-group">
@@ -30,6 +39,7 @@
               type="text"
               name="nama"
               placeholder="Masukkan nama anda..."
+              v-model="input_form.name"
             />
           </div>
         </div>
@@ -45,11 +55,12 @@
               cols="30"
               rows="5"
               wrap="off"
+              v-model="input_form.message"
             />
           </div>
         </div>
         <div class="button-container">
-          <div class="button-buka-undangan" :class="$mq">
+          <div class="button-buka-undangan" :class="$mq" @click="submit_wish()">
             <div class="button-bu-icon" :class="$mq">
               <div class="button-bu-text" :class="$mq">Kirim</div>
             </div>
@@ -64,7 +75,92 @@
 </template>
 
 <script>
-export default {};
+import firebase from "@/configs/firebaseConfig";
+const db = firebase.firestore();
+const wishesRef = db.collection("wishes");
+const currentDate = new Date();
+const timestamp = currentDate.getTime();
+
+export default {
+  data() {
+    return {
+      id: null,
+      input_form: {
+        name: null,
+        message: null,
+        createdAt: timestamp,
+      },
+      wishes_data: [],
+    };
+  },
+  methods: {
+    get_id() {
+      wishesRef
+        .orderBy("createdAt", "desc")
+        .limit(1)
+        .get()
+        .then((querySnapshot) => {
+          querySnapshot.forEach((item) => {
+            this.id = "" + (parseInt(item.id) + 1);
+          });
+        });
+    },
+    get_wishes() {
+      wishesRef
+        .orderBy("createdAt", "desc")
+        .get()
+        .then((querySnapshot) => {
+          this.wishes_data = [];
+          querySnapshot.forEach((doc) => {
+            this.wishes_data.push({
+              id: doc.id,
+              name: doc.data().name,
+              message: doc.data().message,
+            });
+          });
+        })
+        .catch((error) => {
+          console.log("Error getting documents: ", error);
+        });
+    },
+    submit_wish() {
+      this.check_data();
+      wishesRef
+        .doc(this.id)
+        .set(this.input_form)
+        .then(() => {
+          alert("Document successfully written!");
+          this.get_id();
+          this.clear_wish_form();
+          this.get_wishes();
+        })
+        .catch((error) => {
+          console.error("Error writing document: ", error);
+        });
+    },
+    clear_wish_form() {
+      this.input_form = {
+        name: null,
+        message: null,
+        createdAt: timestamp,
+      };
+    },
+    check_data() {
+      this.input_form.name =
+        this.input_form.name.slice(0, 0) +
+        this.input_form.name.charAt(0).toUpperCase() +
+        this.input_form.name.slice(1);
+      this.input_form.message =
+        this.input_form.message.slice(0, 0) +
+        this.input_form.message.charAt(0).toUpperCase() +
+        this.input_form.message.slice(1);
+    },
+  },
+  created() {
+    this.get_wishes();
+    this.get_id();
+  },
+};
 </script>
 
 <style src="@/assets/css/sections/guest.css" scoped/>
