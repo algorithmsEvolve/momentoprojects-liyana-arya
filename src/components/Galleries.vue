@@ -31,7 +31,6 @@
         <div class="two-photo">
           <transition name="fade" mode="out-in">
             <img
-              data-aos="zoom-out-right"
               :src="require('../assets/app/gallery/' + selected[0].image)"
               alt="photo-1"
               :key="selected[0].image"
@@ -41,7 +40,6 @@
           </transition>
           <transition name="fade" mode="out-in">
             <img
-              data-aos="zoom-out-left"
               :src="require('../assets/app/gallery/' + selected[1].image)"
               :key="selected[1].image"
               alt="photo-2"
@@ -53,7 +51,6 @@
         <div class="one-photo">
           <transition name="fade" mode="out-in">
             <img
-              data-aos="zoom-out-up"
               :src="require('../assets/app/gallery/' + selected[2].image)"
               :key="selected[2].image"
               alt="photo-3"
