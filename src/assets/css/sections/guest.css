@@ -74,3 +74,12 @@ p.guest-title {
     color: var(--primary);
     font-weight: 500;
 }
+
+.ud-container {
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.powered {
+    margin-bottom: 8vh;
+}

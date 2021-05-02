@@ -1,5 +1,5 @@
 <template>
-  <div class="sticky-wrapper">
+  <div class="sticky-wrapper" data-aos="zoom-in-up">
     <div class="fb-container">
       <img
         src="../../assets/icons/wedding-day.svg"

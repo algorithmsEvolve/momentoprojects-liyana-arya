@@ -1,6 +1,6 @@
 <template>
   <!-- end vector background -->
-  <div class="cover-content overflow-hidden" :class="$mq">
+  <div class="cover-content overflow-hidden" :class="$mq" data-aos="zoom-in">
     <div class="cover-middle">
       <h1 class="cover-title" :class="$mq">Undangan Pernikahan</h1>
       <div class="cover-inside" :class="$mq">

@@ -1,6 +1,6 @@
 <template>
   <div id="time">
-    <div class="countdown-container">
+    <div class="countdown-container" data-aos="fade-down">
       <div class="countdown-wrapper">
         <div class="count">
           <div class="time">
@@ -25,7 +25,7 @@
         </div>
       </div>
     </div>
-    <div class="maps-container">
+    <div class="maps-container" data-aos="fade-up">
       <div class="maps" :class="$mq">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.5206170996235!2d106.67241895032382!3d-6.194826995493306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f909b90630f5%3A0xf90500cba8965a0b!2sJagarawa!5e0!3m2!1sen!2sid!4v1619213762491!5m2!1sen!2sid"
@@ -37,7 +37,7 @@
         ></iframe>
       </div>
     </div>
-    <div class="button-container">
+    <div class="button-container" data-aos="zoom-in-up">
       <div class="button-buka-undangan" :class="$mq">
         <div class="button-bu-icon" :class="$mq">
           <img
@@ -50,7 +50,7 @@
         </div>
       </div>
     </div>
-    <div class="prokes-container padding-container">
+    <div class="prokes-container padding-container" data-aos="zoom-in-down">
       <div class="prokes-content-container">
         <div class="prokes-text-wrapper">
           <p>

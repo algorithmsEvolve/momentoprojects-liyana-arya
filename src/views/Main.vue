@@ -2,29 +2,24 @@
   <div class="container bg-vector" :class="$mq">
     <!-- vector-background -->
     <background :opened="opened" />
-    <transition name="fade1" mode="out-in">
-      <cover v-model="opened" v-if="!opened" />
-    </transition>
+    <cover v-model="opened" v-if="!opened" />
     <br v-show="opened" />
     <!-- <transition name="fade" mode="in-out"> -->
-    <transition name="fade2" mode="out-in">
-      <opening v-show="opened" />
-    </transition>
+    <opening v-if="opened" />
     <times v-show="opened" />
     <template v-if="opened">
       <background2 />
       <galleries />
       <rsvp />
-      <guest />
+      <guest :wishes_data="wishes_data" />
     </template>
-    <transition name="fade3" mode="out-in">
-      <floating_menu v-if="opened" />
-    </transition>
+    <floating_menu v-if="opened" />
     <!-- </transition> -->
   </div>
 </template>
 
 <script>
+import firebase from "@/configs/firebaseConfig";
 import Background from "../components/Background";
 import Background2 from "../components/Background2";
 import Cover from "../components/Cover";
@@ -34,6 +29,8 @@ import Galleries from "../components/Galleries";
 import Rsvp from "../components/Rsvp";
 import Guest from "../components/Guest";
 import FloatingMenu from "../components/items/FloatingMenu";
+const db = firebase.firestore();
+const wishesRef = db.collection("wishes");
 
 export default {
   components: {
@@ -46,6 +43,7 @@ export default {
     rsvp: Rsvp,
     guest: Guest,
     floating_menu: FloatingMenu,
+    wishes_data: [],
   },
   watch: {
     opened: function () {
@@ -57,6 +55,29 @@ export default {
       opened: false,
       test: "hidden",
     };
+  },
+  methods: {
+    get_wishes() {
+      wishesRef
+        .orderBy("createdAt", "desc")
+        .get()
+        .then((querySnapshot) => {
+          this.wishes_data = [];
+          querySnapshot.forEach((doc) => {
+            this.wishes_data.push({
+              id: doc.id,
+              name: doc.data().name,
+              message: doc.data().message,
+            });
+          });
+        })
+        .catch((error) => {
+          console.log("Error getting documents: ", error);
+        });
+    },
+  },
+  created() {
+    this.get_wishes();
   },
 };
 </script>
