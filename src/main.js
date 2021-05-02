@@ -5,6 +5,14 @@ import VueMq from 'vue-mq'
 import 'viewerjs/dist/viewer.css'
 import Viewer from 'v-viewer'
 import VueScrollTo from 'vue-scrollto'
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+const AOS_initial = new AOS.init({
+  offset: 350,
+  duration: 1000,
+  delay: 200,
+});
 
 Vue.config.productionTip = false
 Vue.use(VueMq, {
@@ -35,6 +43,8 @@ Vue.use(VueScrollTo, {
   duration: 800,
   easing: "ease",
 });
+
+Vue.use(AOS_initial);
 
 new Vue({
   data: {

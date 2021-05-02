@@ -1,8 +1,8 @@
 <template>
   <div id="live">
     <div class="padding-container">
-      <p class="guest-title">Live Streaming</p>
-      <div class="youtube-video">
+      <p class="guest-title" data-aos="fade-down">Live Streaming</p>
+      <div class="youtube-video" data-aos="zoom-out-up">
         <iframe
           width="560"
           height="315"
@@ -14,22 +14,24 @@
         ></iframe>
       </div>
       <div class="ucapan-doa">
-        <p class="guest-title">Ucapan & Doa</p>
-        <template v-if="wishes_data.length">
-          <template v-for="wish in wishes_data">
-            <div class="ud-wrapper" :key="wish.id">
-              <div class="nama">{{ wish.name }}</div>
-              <div class="ucapan">{{ wish.message }}</div>
+        <p class="guest-title" data-aos="fade-down">Ucapan & Doa</p>
+        <div data-aos="fade-up" class="ud-container">
+          <template v-if="wishes_data.length">
+            <template v-for="wish in wishes_data">
+              <div class="ud-wrapper" :key="wish.id">
+                <div class="nama">{{ wish.name }}</div>
+                <div class="ucapan">{{ wish.message }}</div>
+              </div>
+            </template>
+          </template>
+          <template v-else>
+            <div class="ud-wrapper">
+              <div class="ucapan">Belum ada ucapan.</div>
             </div>
           </template>
-        </template>
-        <template v-else>
-          <div class="ud-wrapper">
-            <div class="ucapan">Belum ada ucapan.</div>
-          </div>
-        </template>
+        </div>
       </div>
-      <div class="form-ucapan-wrapper">
+      <div class="form-ucapan-wrapper" data-aos="zoom-in-up">
         <div class="form-group">
           <div class="rsvp-label">
             <p>Nama</p>

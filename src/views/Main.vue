@@ -2,14 +2,10 @@
   <div class="container bg-vector" :class="$mq">
     <!-- vector-background -->
     <background :opened="opened" />
-    <transition name="fade1" mode="out-in">
-      <cover v-model="opened" v-if="!opened" />
-    </transition>
+    <cover v-model="opened" v-if="!opened" />
     <br v-show="opened" />
     <!-- <transition name="fade" mode="in-out"> -->
-    <transition name="fade2" mode="out-in">
-      <opening v-show="opened" />
-    </transition>
+    <opening v-if="opened" />
     <times v-show="opened" />
     <template v-if="opened">
       <background2 />
@@ -17,9 +13,7 @@
       <rsvp />
       <guest :wishes_data="wishes_data" />
     </template>
-    <transition name="fade3" mode="out-in">
-      <floating_menu v-if="opened" />
-    </transition>
+    <floating_menu v-if="opened" />
     <!-- </transition> -->
   </div>
 </template>
@@ -37,8 +31,6 @@ import Guest from "../components/Guest";
 import FloatingMenu from "../components/items/FloatingMenu";
 const db = firebase.firestore();
 const wishesRef = db.collection("wishes");
-const currentDate = new Date();
-const timestamp = currentDate.getTime();
 
 export default {
   components: {

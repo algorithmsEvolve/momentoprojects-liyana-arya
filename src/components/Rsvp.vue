@@ -1,8 +1,8 @@
 <template>
   <div>
     <div id="rsvp" class="padding-container">
-      <p class="rsvp">RSVP</p>
-      <div class="form-rsvp-container">
+      <p class="rsvp" data-aos="fade-down">RSVP</p>
+      <div class="form-rsvp-container" data-aos="fade-up">
         <div class="rsvp-header-container">
           <img
             src="../assets/app/lily-3.png"

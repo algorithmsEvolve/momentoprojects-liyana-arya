@@ -2,6 +2,7 @@
   <div id="opening">
     <div class="opening-logo-wrapper">
       <img
+        data-aos="zoom-in"
         src="../assets/app/LA.png"
         alt="LA logo"
         class="LA-logo"
@@ -11,18 +12,24 @@
 
     <div class="opening-quotes">
       <div class="opening-quote-text">
-        <p>
+        <p data-aos="fade-up" data-aos-delay="400">
           “Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu
           isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa
           tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan
           sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat
           tanda-tanda bagi kaum yang berfikir.”
         </p>
-        <p class="opening-surat">(Ar-Rum: 21)</p>
+        <p class="opening-surat" data-aos="fade-up" data-aos-delay="400">
+          (Ar-Rum: 21)
+        </p>
       </div>
       <div>
         <div class="opening-photo-wrapper">
-          <div class="opening-photo-container">
+          <div
+            class="opening-photo-container"
+            data-aos="fade-right"
+            data-aos-delay="600"
+          >
             <img
               src="../assets/app/opening-liyana.png"
               alt="LA logo"
@@ -33,7 +40,11 @@
             <h6 class="opening-nama2">Putri Pertama:</h6>
             <h6 class="opening-nama2">Mudjijadi & Lilis Suryanti (Alm.)</h6>
           </div>
-          <div class="opening-photo-container">
+          <div
+            class="opening-photo-container"
+            data-aos="fade-left"
+            data-aos-delay="600"
+          >
             <img
               src="../assets/app/opening-arya.png"
               alt="LA logo"
@@ -47,8 +58,10 @@
         </div>
       </div>
       <div class="opening-tanggal">
-        <h6 class="opening-nama">yang diselenggarakan pada :</h6>
-        <div class="opening-tanggal-content">
+        <h6 class="opening-nama" data-aos="fade-down" data-aos-delay="800">
+          yang diselenggarakan pada :
+        </h6>
+        <div class="opening-tanggal-content" data-aos="fade-up">
           <div class="opening-event-group">
             <div class="opening-tanggal-group">
               <img
@@ -81,15 +94,17 @@
             </div>
           </div>
         </div>
-        <div class="button-buka-undangan" :class="$mq">
-          <div class="button-bu-icon" :class="$mq">
-            <img
-              src="../assets/icons/clipboard.svg"
-              alt="clipboard-icon"
-              class="button-icon"
-              :class="$mq"
-            />
-            <div class="button-bu-text" :class="$mq">Catat di Calendar</div>
+        <div data-aos="zoom-in">
+          <div class="button-buka-undangan" :class="$mq">
+            <div class="button-bu-icon" :class="$mq">
+              <img
+                src="../assets/icons/clipboard.svg"
+                alt="clipboard-icon"
+                class="button-icon"
+                :class="$mq"
+              />
+              <div class="button-bu-text" :class="$mq">Catat di Calendar</div>
+            </div>
           </div>
         </div>
       </div>

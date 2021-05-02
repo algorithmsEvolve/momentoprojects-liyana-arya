@@ -1,10 +1,17 @@
 <template>
-  <div class="padding-container" @mouseenter="isPaused = false">
+  <div
+    class="padding-container"
+    @mouseenter="isPaused = false"
+    @mouseover="isPaused = false"
+    @mousemove="isPaused = false"
+    @mouseup="isPaused = false"
+    @mousewheel="isPaused = false"
+  >
     <div class="gallery-container">
-      <div class="kisah-kami-text">
+      <div class="kisah-kami-text" data-aos="fade-down">
         <p>Kisah Kami</p>
       </div>
-      <div class="kisah-kami-slider-container">
+      <div class="kisah-kami-slider-container" data-aos="fade-up">
         <VueSlickCarousel v-bind="settings">
           <div v-for="(item, index) in kisah_kami_icon" :key="index">
             <KisahKamiCard
@@ -24,6 +31,7 @@
         <div class="two-photo">
           <transition name="fade" mode="out-in">
             <img
+              data-aos="zoom-out-right"
               :src="require('../assets/app/gallery/' + selected[0].image)"
               alt="photo-1"
               :key="selected[0].image"
@@ -33,6 +41,7 @@
           </transition>
           <transition name="fade" mode="out-in">
             <img
+              data-aos="zoom-out-left"
               :src="require('../assets/app/gallery/' + selected[1].image)"
               :key="selected[1].image"
               alt="photo-2"
@@ -44,6 +53,7 @@
         <div class="one-photo">
           <transition name="fade" mode="out-in">
             <img
+              data-aos="zoom-out-up"
               :src="require('../assets/app/gallery/' + selected[2].image)"
               :key="selected[2].image"
               alt="photo-3"
