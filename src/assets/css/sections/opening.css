@@ -9,7 +9,7 @@
 .opening-quotes p {
     text-align: center;
     color: var(--primary);
-    font-size: var(--font-12);
+    font-size: var(--font-12-md);
 }
 
 .opening-quotes p.opening-surat {
@@ -17,7 +17,7 @@
     text-align: center;
     color: var(--primary);
     font-weight: bolder;
-    font-size: var(--font-12);
+    font-size: var(--font-12-md);
 }
 
 .opening-photo-wrapper {
@@ -45,7 +45,7 @@
 }
 
 .opening-event-group {
-    padding: 0 1rem;
+    padding: 0 1.5rem;
 }
 
 .opening-tanggal-content {
@@ -72,4 +72,14 @@
 .opening-icon-top {
     position: relative;
     top: 0;
+}
+
+.LA-logo {
+    width: 30vw;
+    max-width: 200px;
+}
+
+.opening-photo {
+    width: 40vw;
+    max-width: 250px;
 }

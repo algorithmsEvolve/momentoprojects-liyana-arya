@@ -1,6 +1,8 @@
 .sticky-wrapper {
-    position: sticky;
+    position: fixed;
     bottom: 40px;
+    right: 0;
+    left: 0;
     z-index: 2;
     padding: 0 2.8rem 0 2rem;
     /* padding-right: .8rem; */

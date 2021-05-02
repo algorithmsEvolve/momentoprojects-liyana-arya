@@ -5,7 +5,7 @@
       <div class="form-rsvp-container">
         <div class="rsvp-header-container">
           <img
-            src="../assets/app/lily-3.svg"
+            src="../assets/app/lily-3.png"
             alt="lily3-icon"
             class="lily3-icon"
             :class="$mq"

@@ -2,7 +2,7 @@
   <div id="opening">
     <div class="opening-logo-wrapper">
       <img
-        src="../assets/app/LA.svg"
+        src="../assets/app/LA.png"
         alt="LA logo"
         class="LA-logo"
         :class="$mq"
@@ -20,11 +20,11 @@
         </p>
         <p class="opening-surat">(Ar-Rum: 21)</p>
       </div>
-      <div class="opening-photo">
+      <div>
         <div class="opening-photo-wrapper">
           <div class="opening-photo-container">
             <img
-              src="../assets/app/opening-liyana.svg"
+              src="../assets/app/opening-liyana.png"
               alt="LA logo"
               class="opening-photo"
               :class="$mq"
@@ -35,7 +35,7 @@
           </div>
           <div class="opening-photo-container">
             <img
-              src="../assets/app/opening-arya.svg"
+              src="../assets/app/opening-arya.png"
               alt="LA logo"
               class="opening-photo"
               :class="$mq"

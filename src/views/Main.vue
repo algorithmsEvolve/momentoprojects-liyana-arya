@@ -1,7 +1,7 @@
 <template>
   <div class="container bg-vector" :class="$mq">
     <!-- vector-background -->
-    <background />
+    <background :opened="opened" />
     <transition name="fade1" mode="out-in">
       <cover v-model="opened" v-if="!opened" />
     </transition>

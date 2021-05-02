@@ -82,31 +82,31 @@ export default {
     return {
       kisah_kami_icon: [
         {
-          icon: "kisah_kami1.svg",
+          icon: "kisah_kami1.png",
           text:
             "Kami merupakan teman sekelas di matematika undip dan lebih saling mengenal karena pernah satu kepanitiaan",
         },
         {
-          icon: "kisah_kami2.svg",
+          icon: "kisah_kami2.png",
           text:
             "Kami ternyata satu organisasi, di sini Liyana mulai iseng deketin Arya, tapi Aryanya sok cuek",
         },
         {
-          icon: "kisah_kami3.svg",
+          icon: "kisah_kami3.png",
           text:
             "Kala itu justru Arya mulai deketin Liyana. Arya nemenin Liyana ke bengkel, dan ternyata momen itu bikin kami lebih dekat",
         },
         {
-          icon: "kisah_kami4.svg",
+          icon: "kisah_kami4.png",
           text: "Di puncak gunung andong, kami resmi berpacaran",
         },
         {
-          icon: "kisah_kami5.svg",
+          icon: "kisah_kami5.png",
           text:
             "Kami mulai menjalani hubungan jarak jauh dikarenakan kami bekerja di kota yang berbeda",
         },
         {
-          icon: "kisah_kami6.svg",
+          icon: "kisah_kami6.png",
           text:
             "3 tahun berlalu, rasa yg kami miliki tetap sama. Kami memutuskan utk ke jenjang yang lebih serius, yaitu menikah.",
         },
