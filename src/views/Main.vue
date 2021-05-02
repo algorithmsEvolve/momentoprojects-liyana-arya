@@ -1,5 +1,5 @@
 <template>
-  <div class="container bg-vector" :class="$mq">
+  <div class="container bg-vector" style="overflow-x: hidden" :class="$mq">
     <!-- vector-background -->
     <background :opened="opened" />
     <cover v-model="opened" v-if="!opened" />
