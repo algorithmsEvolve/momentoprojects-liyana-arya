@@ -14,6 +14,7 @@
         :class="$mq"
         @mouseenter="change_email_icon(true)"
         @mouseleave="change_email_icon(false)"
+        @click="open()"
       >
         <div class="button-bu-icon" :class="$mq">
           <img
@@ -24,9 +25,7 @@
               button_hovered ? 'cover-email-icon-open' : 'cover-email-icon',
             ]"
           />
-          <div class="button-bu-text" :class="$mq" @click="open()">
-            Buka Undangan
-          </div>
+          <div class="button-bu-text" :class="$mq">Buka Undangan</div>
         </div>
       </div>
     </div>
