@@ -82,6 +82,7 @@ const currentDate = new Date();
 const timestamp = currentDate.getTime();
 
 export default {
+  props: ["wishes_data"],
   data() {
     return {
       id: null,
@@ -157,7 +158,6 @@ export default {
     },
   },
   created() {
-    this.get_wishes();
     this.get_id();
   },
 };
