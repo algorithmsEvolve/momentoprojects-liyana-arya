@@ -9,7 +9,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const AOS_initial = new AOS.init({
-  offset: 300,
+  offset: 50,
   duration: 1000,
   delay: 200,
 });

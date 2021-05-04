@@ -16,7 +16,7 @@
 
 .kisah-card-text p {
     color: var(--secondary);
-    font-size: var(--font-12);
+    font-size: 3vw;
 }
 
 .kisah-kami-icon {

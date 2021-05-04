@@ -37,7 +37,7 @@
         ></iframe>
       </div>
     </div>
-    <div class="button-container" data-aos="zoom-in-up">
+    <div class="button-container" data-aos="fade-up">
       <div class="button-buka-undangan" :class="$mq">
         <div class="button-bu-icon" :class="$mq">
           <img
@@ -50,7 +50,7 @@
         </div>
       </div>
     </div>
-    <div class="prokes-container padding-container" data-aos="zoom-in-down">
+    <div class="prokes-container padding-container" data-aos="fade-down">
       <div class="prokes-content-container">
         <div class="prokes-text-wrapper">
           <p>

@@ -3,7 +3,7 @@
 }
 
 .opening-quotes {
-    padding: .3rem 1.3rem;
+    padding: .3rem 0;
 }
 
 .opening-quotes p {
@@ -27,7 +27,7 @@
 
 .opening-photo-container {
     text-align: center;
-    padding: 0 .25rem;
+    padding: 0 0;
 }
 
 .opening-nama {
@@ -82,4 +82,16 @@
 .opening-photo {
     width: 40vw;
     max-width: 250px;
+}
+
+.photo-left {
+    padding-right: .25rem;
+}
+
+.photo-right {
+    padding-left: .25rem;
+}
+
+.opening-padding-wrapper {
+    padding: 0 1.3rem;
 }

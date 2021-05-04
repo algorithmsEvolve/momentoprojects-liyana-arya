@@ -1,6 +1,6 @@
 <template>
-  <div class="sticky-wrapper" data-aos="zoom-in-up">
-    <div class="fb-container">
+  <div class="sticky-wrapper" data-aos="zoom-in-up" data-aos-offset="0">
+    <div class="fb-container" data-aos="zoom-in-up" data-aos-offset="0">
       <img
         src="../../assets/icons/wedding-day.svg"
         alt="wedding-day-icon"

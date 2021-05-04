@@ -2,7 +2,7 @@
   <div id="live">
     <div class="padding-container">
       <p class="guest-title" data-aos="fade-down">Live Streaming</p>
-      <div class="youtube-video" data-aos="zoom-out-up">
+      <div class="youtube-video" data-aos="fade-up">
         <iframe
           width="560"
           height="315"
@@ -31,7 +31,7 @@
           </template>
         </div>
       </div>
-      <div class="form-ucapan-wrapper" data-aos="zoom-in-up">
+      <div class="form-ucapan-wrapper" data-aos="fade-up">
         <div class="form-group">
           <div class="rsvp-label">
             <p>Nama</p>

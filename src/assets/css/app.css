@@ -63,6 +63,7 @@ input, textarea {
   background-repeat: no-repeat;
   background-size: cover;
   overflow-x: hidden !important;
+  overflow-y: hidden !important;
 }
 
 .padding-container {
