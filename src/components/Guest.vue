@@ -14,6 +14,14 @@
         ></iframe>
       </div>
       <div class="ucapan-doa">
+        <div class="ud-line-img">
+          <img
+            src="../assets/app/line-2.png"
+            alt="line2-icon"
+            class="line2-icon"
+            :class="$mq"
+          />
+        </div>
         <p class="guest-title" data-aos="fade-down">Ucapan & Doa</p>
         <div data-aos="fade-up" class="ud-container">
           <template v-if="wishes_data.length">
@@ -30,6 +38,14 @@
             </div>
           </template>
         </div>
+      </div>
+      <div class="guest-line-bottom">
+        <img
+          src="../assets/app/lily-5.png"
+          alt="lily5-icon"
+          class="lily5-icon"
+          :class="$mq"
+        />
       </div>
       <div class="form-ucapan-wrapper" data-aos="fade-up">
         <div class="form-group">
@@ -56,9 +72,12 @@
               placeholder="Tulis pesanmu..."
               cols="30"
               rows="5"
-              wrap="off"
+              style="overflow-x: hidden"
               v-model="input_form.message"
             />
+            <div class="text-length">
+              <p>{{ input_form.message.length }} / 200</p>
+            </div>
           </div>
         </div>
         <div class="button-container">
@@ -72,6 +91,14 @@
           <p>Powered by: Azeg</p>
         </div>
       </div>
+    </div>
+    <div class="powered-lily-bottom" style="position: relative">
+      <img
+        src="../assets/app/lily-6.png"
+        alt="lily6-icon"
+        class="lily6-icon"
+        :class="$mq"
+      />
     </div>
   </div>
 </template>

@@ -134,6 +134,14 @@
               </div>
             </div>
           </div>
+          <div class="rsvp-footer-img">
+            <img
+              src="../assets/app/lily-4.png"
+              alt="lily4-icon"
+              class="lily4-icon"
+              :class="$mq"
+            />
+          </div>
         </div>
       </div>
     </div>

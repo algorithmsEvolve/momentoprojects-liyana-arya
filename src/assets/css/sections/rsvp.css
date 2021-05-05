@@ -29,7 +29,15 @@ p.rsvp-title {
 }
 
 img.lily3-icon {
-    width: 5rem;
+    width: 20vw;
+}
+
+img.lily4-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30vw;
+    pointer-events: none;
 }
 
 .form-rsvp-wrapper {
@@ -107,6 +115,7 @@ img.lily3-icon {
     display: block;
     background: var(--gold);
   }
+
   .radio-item input[type=radio]:checked ~ label {
     font-weight: bolder;
   }

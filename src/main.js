@@ -11,7 +11,7 @@ import "aos/dist/aos.css";
 const AOS_initial = new AOS.init({
   offset: 50,
   duration: 1000,
-  delay: 200,
+  delay: 100,
 });
 
 Vue.config.productionTip = false

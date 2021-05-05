@@ -3,9 +3,7 @@
     class="padding-container"
     @mouseenter="isPaused = false"
     @mouseover="isPaused = false"
-    @mousemove="isPaused = false"
-    @mouseup="isPaused = false"
-    @mousewheel="isPaused = false"
+    @scroll.native="isPaused = false"
   >
     <div class="gallery-container">
       <div class="kisah-kami-text" data-aos="fade-down">
