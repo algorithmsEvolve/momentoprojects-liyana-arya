@@ -72,11 +72,11 @@
               placeholder="Tulis pesanmu..."
               cols="30"
               rows="5"
-              style="overflow-x: hidden"
+              wrap="off"
               v-model="input_form.message"
             />
             <div class="text-length">
-              <p>{{ input_form.message.length }} / 200</p>
+              <p>0 / 200</p>
             </div>
           </div>
         </div>
