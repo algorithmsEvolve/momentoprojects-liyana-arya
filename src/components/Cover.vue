@@ -54,6 +54,10 @@ export default {
       this.button_hovered = bool;
     },
     open() {
+      var audio = new Audio(
+        "https://firebasestorage.googleapis.com/v0/b/liyana-arya-wedding.appspot.com/o/BTS%20(%EB%B0%A9%ED%83%84%EC%86%8C%EB%85%84%EB%8B%A8)%20-%20Answer%20Love%20Myself%20Piano%20Cover.mp3?alt=media&token=a1abd762-3147-4f3b-b1e5-7a62d467dbef"
+      ); // path to file
+      audio.play();
       this.$emit("input", true);
     },
   },
