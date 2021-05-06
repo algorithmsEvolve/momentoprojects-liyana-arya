@@ -76,6 +76,10 @@ export default {
         });
     },
   },
+  mounted() {
+    var audio = new Audio(require("@/assets/music/bts.mp3")); // path to file
+    audio.play();
+  },
   created() {
     this.get_wishes();
   },
