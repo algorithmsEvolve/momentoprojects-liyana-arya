@@ -77,7 +77,7 @@
               v-model="input_form.message"
             />
             <div class="text-length">
-              <p>{{ message_length }}/ 200</p>
+              <p>{{ message_length }} / 200</p>
             </div>
           </div>
         </div>

@@ -39,7 +39,12 @@
     </div>
     <div class="button-container" data-aos="fade-up">
       <div class="button-buka-undangan" :class="$mq">
-        <div class="button-bu-icon" :class="$mq">
+        <a
+          href="https://goo.gl/maps/ywPfvwSdxTyZgiD46"
+          target="_blank"
+          class="button-bu-icon button-a"
+          :class="$mq"
+        >
           <img
             src="../assets/icons/map-marker-primary.svg"
             alt="map-icon"
@@ -47,7 +52,7 @@
             :class="$mq"
           />
           <div class="button-bu-text" :class="$mq">Lihat Arah Lokasi</div>
-        </div>
+        </a>
       </div>
     </div>
     <div class="prokes-container padding-container" data-aos="fade-down">

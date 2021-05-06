@@ -146,6 +146,11 @@ input, textarea {
 .button-bu-text.mobile {
   color: var(--primary);
   font-size: var(--font-12-md);
+  align-self: center;
+}
+
+.button-a {
+  text-decoration: none;
 }
 
 .button-bu-icon.mobile {

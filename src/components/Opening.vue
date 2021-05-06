@@ -99,7 +99,12 @@
           </div>
           <div data-aos="fade-up">
             <div class="button-buka-undangan" :class="$mq">
-              <div class="button-bu-icon" :class="$mq">
+              <a
+                href="https://calendar.google.com/event?action=TEMPLATE&tmeid=MWRjN3RhbmtzMXEzOGgyN2djYnVrNnJ1aTYgbW9tZW50b3Byb2plY3RzLmlkQG0&tmsrc=momentoprojects.id%40gmail.com"
+                target="_blank"
+                class="button-bu-icon button-a"
+                :class="$mq"
+              >
                 <img
                   src="../assets/icons/clipboard.svg"
                   alt="clipboard-icon"
@@ -107,7 +112,7 @@
                   :class="$mq"
                 />
                 <div class="button-bu-text" :class="$mq">Catat di Calendar</div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
