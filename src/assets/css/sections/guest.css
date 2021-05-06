@@ -76,7 +76,7 @@ p.guest-title {
 }
 
 .ud-container {
-    max-height: 35vh;
+    max-height: 280px;
     overflow-y: auto;
 }
 
