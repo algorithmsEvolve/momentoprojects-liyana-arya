@@ -145,7 +145,7 @@ input, textarea {
 
 .button-bu-text.mobile {
   color: var(--primary);
-  font-size: var(--font-12-lg);
+  font-size: var(--font-12-md);
 }
 
 .button-bu-icon.mobile {

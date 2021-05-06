@@ -73,10 +73,11 @@
               cols="30"
               rows="5"
               wrap="off"
+              @keyup="change_message_length"
               v-model="input_form.message"
             />
             <div class="text-length">
-              <p>0 / 200</p>
+              <p>{{ message_length }}/ 200</p>
             </div>
           </div>
         </div>
@@ -120,10 +121,14 @@ export default {
         message: null,
         createdAt: timestamp,
       },
+      message_length: 0,
       wishes_data: [],
     };
   },
   methods: {
+    change_message_length() {
+      this.message_length = this.input_form.message.length;
+    },
     get_id() {
       wishesRef
         .orderBy("createdAt", "desc")
