@@ -6,7 +6,7 @@
     <br v-show="opened" />
     <!-- <transition name="fade" mode="in-out"> -->
     <opening v-if="opened" />
-    <times v-show="opened" />
+    <times v-if="opened" />
     <template v-if="opened">
       <background2 />
       <galleries />
