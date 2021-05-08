@@ -54,9 +54,11 @@
           </div>
           <div class="rsvp-input">
             <input
+              autocomplete="off"
               type="text"
               name="nama"
               placeholder="Masukkan nama anda..."
+              class="input-gold-hover"
               v-model="input_form.name"
             />
           </div>
@@ -73,6 +75,7 @@
               cols="30"
               rows="5"
               wrap="off"
+              class="input-gold-hover"
               @keyup="change_message_length"
               v-model="input_form.message"
             />

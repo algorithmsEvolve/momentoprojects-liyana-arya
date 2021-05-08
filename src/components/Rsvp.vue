@@ -27,6 +27,7 @@
                 type="text"
                 name="nama"
                 placeholder="Masukkan nama anda..."
+                class="input-gold-hover"
                 v-model="input_form.name"
               />
             </div>
@@ -41,6 +42,7 @@
                 type="text"
                 name="nama"
                 placeholder="Masukkan nomor handphone..."
+                class="input-gold-hover"
                 v-model="input_form.phone"
               />
             </div>
@@ -57,6 +59,7 @@
                 cols="30"
                 rows="5"
                 wrap="off"
+                class="input-gold-hover"
                 v-model="input_form.message"
               />
             </div>

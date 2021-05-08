@@ -172,3 +172,7 @@ input, textarea {
 .viewer-backdrop{
   background-color: rgba(0, 0, 0, .8) !important;
 }
+
+.input-gold-hover:focus {
+  border-color: var(--gold) !important;
+}
