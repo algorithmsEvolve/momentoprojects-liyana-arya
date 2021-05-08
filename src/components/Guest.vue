@@ -117,8 +117,8 @@ export default {
     return {
       id: null,
       input_form: {
-        name: null,
-        message: null,
+        name: "",
+        message: "",
         createdAt: timestamp,
       },
       message_length: 0,
@@ -159,17 +159,17 @@ export default {
         });
     },
     submit_wish() {
-      this.$swal({
-        icon: "success",
-        html:
-          "<h5>Liyana & Arya Wedding</h5><h6>Terimakasih atas doa dan ucapannya :)</h6>",
-        showConfirmButton: true,
-        confirmButtonColor: "#3F6D97",
-        iconColor: "#3F6D97",
-      });
       this.check_data();
       let validate = this.wish_form_validation();
-      if (validate == true) {
+      if (validate.status == true) {
+        this.$swal({
+          icon: "success",
+          html:
+            "<h5>Liyana & Arya Wedding</h5><h6>Terimakasih atas doa dan ucapannya :)</h6>",
+          showConfirmButton: true,
+          confirmButtonColor: "#3F6D97",
+          iconColor: "#3F6D97",
+        });
         wishesRef
           .doc(this.id)
           .set(this.input_form)
@@ -189,8 +189,7 @@ export default {
       } else {
         this.$swal({
           icon: "error",
-          html:
-            "<h6>Pesan yang anda masukkan tidak boleh lebih dari 200 karakter.</h6>",
+          html: validate.message,
           showConfirmButton: true,
         });
       }
@@ -203,10 +202,26 @@ export default {
       };
     },
     wish_form_validation() {
+      let validate = {
+        status: true,
+        message: "",
+      };
       if (this.message_length > 200) {
-        return false;
+        validate.status = false;
+        validate.message =
+          validate.message +
+          "<h6>Pesan yang anda masukkan tidak boleh lebih dari 200 karakter.</h6>";
       }
-      return true;
+      if (!this.input_form.name.length) {
+        validate.status = false;
+        validate.message =
+          validate.message + "<h6>Harap masukkan nama Anda.</h6>";
+      }
+      if (!this.input_form.message.length) {
+        validate.status = false;
+        validate.message = validate.message + "<h6>Harap masukkan pesan.</h6>";
+      }
+      return validate;
     },
     check_data() {
       this.input_form.name =

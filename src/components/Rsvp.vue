@@ -168,9 +168,9 @@ export default {
         berdua: 2,
       },
       input_form: {
-        name: null,
-        phone: null,
-        message: null,
+        name: "",
+        phone: "",
+        message: "",
         attendance: true,
         how: 1,
         createdAt: timestamp,
@@ -190,30 +190,71 @@ export default {
         });
     },
     submit_rsvp() {
-      this.$swal({
-        icon: "success",
-        html:
-          "<h5>Liyana & Arya Wedding</h5><h6>Terimakasih Atas Konfirmasinya :)</h6>",
-        showConfirmButton: true,
-        confirmButtonColor: "#3F6D97",
-        iconColor: "#3F6D97",
-      });
       this.check_data();
-      rsvpsRef
-        .doc(this.id)
-        .set(this.input_form)
-        .then(() => {
-          this.get_id();
-          this.clear_rsvp_form();
-        })
-        .catch((error) => {
-          this.$swal({
-            icon: "error",
-            html:
-              "<h6>Terjadi kesalahan. Mohon ulangi beberapa menit lagi :(</h6>",
-            showConfirmButton: true,
-          });
+      let validate = this.rsvp_form_validation();
+      if (validate.status == true) {
+        this.$swal({
+          icon: "success",
+          html:
+            "<h5>Liyana & Arya Wedding</h5><h6>Terimakasih Atas Konfirmasinya :)</h6>",
+          showConfirmButton: true,
+          confirmButtonColor: "#3F6D97",
+          iconColor: "#3F6D97",
         });
+        rsvpsRef
+          .doc(this.id)
+          .set(this.input_form)
+          .then(() => {
+            this.get_id();
+            this.clear_rsvp_form();
+          })
+          .catch((error) => {
+            this.$swal({
+              icon: "error",
+              html:
+                "<h6>Terjadi kesalahan. Mohon ulangi beberapa menit lagi :(</h6>",
+              showConfirmButton: true,
+            });
+          });
+      } else {
+        this.input_form.how = 1;
+        this.$swal({
+          icon: "error",
+          html: validate.message,
+          showConfirmButton: true,
+        });
+      }
+    },
+    rsvp_form_validation() {
+      let validate = {
+        status: true,
+        message: "",
+      };
+      if (this.input_form.message.length > 200) {
+        validate.status = false;
+        validate.message =
+          validate.message +
+          "<h6>Pesan yang anda masukkan tidak boleh lebih dari 200 karakter.</h6>";
+      }
+
+      if (!this.input_form.name.length) {
+        validate.status = false;
+        validate.message =
+          validate.message + "<h6>Harap masukkan nama Anda.</h6>";
+      }
+
+      if (!this.input_form.phone.length) {
+        validate.status = false;
+        validate.message =
+          validate.message + "<h6>Harap masukkan nomor handphone Anda.</h6>";
+      }
+
+      if (!this.input_form.message.length) {
+        validate.status = false;
+        validate.message = validate.message + "<h6>Harap masukkan pesan.</h6>";
+      }
+
+      return validate;
     },
     clear_rsvp_form() {
       this.input_form = {
