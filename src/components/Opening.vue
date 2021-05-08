@@ -40,7 +40,9 @@
             />
             <h6 class="opening-nama">Liyana Adhiningrum</h6>
             <h6 class="opening-nama2">Putri Pertama:</h6>
-            <h6 class="opening-nama2">Mudjijadi & Lilis Suryanti (Alm.)</h6>
+            <h6 class="opening-nama2">
+              Mudjijadi<br />&<br />Lilis Suryanti (Alm.)
+            </h6>
           </div>
           <div
             class="opening-photo-container"
@@ -55,7 +57,7 @@
             />
             <h6 class="opening-nama">Arya Ghiri</h6>
             <h6 class="opening-nama2">Putra Kedua:</h6>
-            <h6 class="opening-nama2">Sumarmo & Budi Rahayu</h6>
+            <h6 class="opening-nama2">Sumarsono<br />&<br />Budi Rahayu</h6>
           </div>
         </div>
       </div>

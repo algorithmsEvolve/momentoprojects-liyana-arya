@@ -5,18 +5,19 @@
     @mouseover="isPaused = false"
     @scroll.native="isPaused = false"
   >
-    <div class="gallery-container">
+    <div class="gallery-container" id="gallery">
       <div class="kisah-kami-text" data-aos="fade-down">
         <p>Kisah Kami</p>
       </div>
-      <div class="kisah-kami-slider-container" data-aos="fade-up">
+      <div
+        class="kisah-kami-slider-container"
+        data-aos="fade-up"
+        v-view="viewHandler"
+        view-in
+      >
         <VueSlickCarousel v-bind="settings">
           <div v-for="(item, index) in kisah_kami_icon" :key="index">
-            <KisahKamiCard
-              :text="item.text"
-              :src="item.icon"
-              :index="item.index"
-            />
+            <KisahKamiCard :src="item.icon" :index="item.index" />
           </div>
         </VueSlickCarousel>
       </div>
@@ -24,7 +25,6 @@
         class="photo-gallery-container"
         v-viewer="options"
         @click="isPaused = true"
-        id="gallery"
       >
         <div class="two-photo">
           <transition name="fade" mode="out-in">
@@ -91,32 +91,32 @@ export default {
       kisah_kami_icon: [
         {
           icon: "kisah_kami1.png",
-          text:
-            "Kami merupakan teman sekelas di matematika undip dan lebih saling mengenal karena pernah satu kepanitiaan",
+          // text:
+          //   "Kami merupakan teman sekelas di matematika undip dan lebih saling mengenal karena pernah satu kepanitiaan",
         },
         {
           icon: "kisah_kami2.png",
-          text:
-            "Kami ternyata satu organisasi, di sini Liyana mulai iseng deketin Arya, tapi Aryanya sok cuek",
+          // text:
+          //   "Kami ternyata satu organisasi, di sini Liyana mulai iseng deketin Arya, tapi Aryanya sok cuek",
         },
         {
           icon: "kisah_kami3.png",
-          text:
-            "Kala itu justru Arya mulai deketin Liyana. Arya nemenin Liyana ke bengkel, dan ternyata momen itu bikin kami lebih dekat",
+          // text:
+          //   "Kala itu justru Arya mulai deketin Liyana. Arya nemenin Liyana ke bengkel, dan ternyata momen itu bikin kami lebih dekat",
         },
         {
           icon: "kisah_kami4.png",
-          text: "Di puncak gunung andong, kami resmi berpacaran",
+          // text: "Di puncak gunung andong, kami resmi berpacaran",
         },
         {
           icon: "kisah_kami5.png",
-          text:
-            "Kami mulai menjalani hubungan jarak jauh dikarenakan kami bekerja di kota yang berbeda",
+          // text:
+          //   "Kami mulai menjalani hubungan jarak jauh dikarenakan kami bekerja di kota yang berbeda",
         },
         {
           icon: "kisah_kami6.png",
-          text:
-            "3 tahun berlalu, rasa yg kami miliki tetap sama. Kami memutuskan utk ke jenjang yang lebih serius, yaitu menikah.",
+          // text:
+          //   "3 tahun berlalu, rasa yg kami miliki tetap sama. Kami memutuskan utk ke jenjang yang lebih serius, yaitu menikah.",
         },
       ],
       settings: {
@@ -127,9 +127,10 @@ export default {
         slidesToShow: 1,
         slidesToScroll: 1,
         variableWidth: true,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 6000,
       },
+      autoplay_indicator: 0,
       indicator_img_change: true,
       selected: [
         {
@@ -166,6 +167,13 @@ export default {
     };
   },
   methods: {
+    viewHandler() {
+      if (this.autoplay_indicator > 2) {
+        this.settings.autoplay = true;
+      } else {
+        this.autoplay_indicator++;
+      }
+    },
     changeImage() {
       if (this.indicator_img_change == true) {
         this.selected[0].image = this.images[0].image;

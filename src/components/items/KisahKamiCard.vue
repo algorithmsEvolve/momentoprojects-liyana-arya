@@ -10,11 +10,11 @@
             :class="$mq"
           />
         </div>
-        <div class="kisah-card-text">
+        <!-- <div class="kisah-card-text">
           <p>
             {{ text }}
           </p>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -22,7 +22,7 @@
 
 <script>
 export default {
-  props: ["src", "text", "index"],
+  props: ["src", "index"],
 };
 </script>
 

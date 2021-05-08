@@ -12,6 +12,9 @@
     width: 60vw;
     text-align: center;
     margin: 0 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .kisah-card-text p {
@@ -20,5 +23,5 @@
 }
 
 .kisah-kami-icon {
-    width: 25vw !important;
+    width: 35vw !important;
 }

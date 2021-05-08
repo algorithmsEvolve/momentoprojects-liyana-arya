@@ -159,19 +159,41 @@ export default {
         });
     },
     submit_wish() {
+      this.$swal({
+        icon: "success",
+        html:
+          "<h5>Liyana & Arya Wedding</h5><h6>Terimakasih atas doa dan ucapannya :)</h6>",
+        showConfirmButton: true,
+        confirmButtonColor: "#3F6D97",
+        iconColor: "#3F6D97",
+      });
       this.check_data();
-      wishesRef
-        .doc(this.id)
-        .set(this.input_form)
-        .then(() => {
-          alert("Document successfully written!");
-          this.get_id();
-          this.clear_wish_form();
-          this.get_wishes();
-        })
-        .catch((error) => {
-          console.error("Error writing document: ", error);
+      let validate = this.wish_form_validation();
+      if (validate == true) {
+        wishesRef
+          .doc(this.id)
+          .set(this.input_form)
+          .then(() => {
+            this.get_id();
+            this.clear_wish_form();
+            this.get_wishes();
+          })
+          .catch((error) => {
+            this.$swal({
+              icon: "error",
+              html:
+                "<h6>Terjadi kesalahan. Mohon ulangi beberapa menit lagi :(</h6>",
+              showConfirmButton: true,
+            });
+          });
+      } else {
+        this.$swal({
+          icon: "error",
+          html:
+            "<h6>Pesan yang anda masukkan tidak boleh lebih dari 200 karakter.</h6>",
+          showConfirmButton: true,
         });
+      }
     },
     clear_wish_form() {
       this.input_form = {
@@ -179,6 +201,12 @@ export default {
         message: null,
         createdAt: timestamp,
       };
+    },
+    wish_form_validation() {
+      if (this.message_length > 200) {
+        return false;
+      }
+      return true;
     },
     check_data() {
       this.input_form.name =

@@ -7,6 +7,9 @@ import Viewer from 'v-viewer'
 import VueScrollTo from 'vue-scrollto'
 import AOS from "aos";
 import "aos/dist/aos.css";
+import checkView from 'vue-check-view';
+import VueSweetalert2 from 'vue-sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
 
 const AOS_initial = new AOS.init({
   offset: 50,
@@ -45,6 +48,10 @@ Vue.use(VueScrollTo, {
 });
 
 Vue.use(AOS_initial);
+
+Vue.use(checkView);
+
+Vue.use(VueSweetalert2);
 
 new Vue({
   data: {

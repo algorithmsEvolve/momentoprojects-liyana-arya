@@ -190,17 +190,29 @@ export default {
         });
     },
     submit_rsvp() {
+      this.$swal({
+        icon: "success",
+        html:
+          "<h5>Liyana & Arya Wedding</h5><h6>Terimakasih telah memberikan informasi kehadiran kamu :)</h6>",
+        showConfirmButton: true,
+        confirmButtonColor: "#3F6D97",
+        iconColor: "#3F6D97",
+      });
       this.check_data();
       rsvpsRef
         .doc(this.id)
         .set(this.input_form)
         .then(() => {
-          alert("Document successfully written!");
           this.get_id();
           this.clear_rsvp_form();
         })
         .catch((error) => {
-          console.error("Error writing document: ", error);
+          this.$swal({
+            icon: "error",
+            html:
+              "<h6>Terjadi kesalahan. Mohon ulangi beberapa menit lagi :(</h6>",
+            showConfirmButton: true,
+          });
         });
     },
     clear_rsvp_form() {
