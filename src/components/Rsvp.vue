@@ -193,7 +193,7 @@ export default {
       this.$swal({
         icon: "success",
         html:
-          "<h5>Liyana & Arya Wedding</h5><h6>Terimakasih telah memberikan informasi kehadiran kamu :)</h6>",
+          "<h5>Liyana & Arya Wedding</h5><h6>Terimakasih Atas Konfirmasinya :)</h6>",
         showConfirmButton: true,
         confirmButtonColor: "#3F6D97",
         iconColor: "#3F6D97",
