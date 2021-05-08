@@ -37,7 +37,7 @@
         ></iframe>
       </div>
     </div>
-    <div class="button-container" data-aos="fade-up">
+    <div class="button-container" data-aos="fade-down">
       <div class="button-buka-undangan" :class="$mq">
         <a
           href="https://goo.gl/maps/ywPfvwSdxTyZgiD46"
@@ -55,7 +55,7 @@
         </a>
       </div>
     </div>
-    <div class="prokes-container padding-container" data-aos="fade-down">
+    <div class="prokes-container padding-container" data-aos="fade-up">
       <div class="prokes-content-container">
         <div class="prokes-text-wrapper">
           <p>
