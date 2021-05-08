@@ -92,7 +92,7 @@
           </div>
         </div>
         <div class="powered">
-          <p>Powered by: Azeg</p>
+          <p>Powered by: momentoprojects.id</p>
         </div>
       </div>
     </div>
