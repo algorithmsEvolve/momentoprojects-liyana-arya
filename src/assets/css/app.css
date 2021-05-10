@@ -1,3 +1,5 @@
+/* BOTH */
+
 /* define variables */
 :root {
   /* define colors */
@@ -53,7 +55,9 @@ input, textarea {
   color: var(--primary);
 }
 
-.container {
+/* MOBILE */
+
+.container.mobile {
   padding: 0 .8rem;
   /* height: 100vh; */
   min-height: 200vh;
@@ -66,11 +70,10 @@ input, textarea {
   overflow-y: hidden !important;
 }
 
-.padding-container {
+.padding-container.mobile {
   padding: .3rem 1.3rem;
 }
 
-/* mobile */
 .butterfly1.mobile {
   position: absolute;
   width: 20vw;
@@ -149,7 +152,7 @@ input, textarea {
   align-self: center;
 }
 
-.button-a {
+.button-a.mobile {
   text-decoration: none;
 }
 
@@ -164,15 +167,151 @@ input, textarea {
   width: 1.5rem;
 }
 
-.button-buka-undangan:hover img {
+.button-buka-undangan.mobile:hover img {
+  filter: brightness(0) invert(1); 
+}
+
+.viewer-backdrop.mobile {
+  background-color: rgba(0, 0, 0, .8) !important;
+}
+
+.input-gold-hover.mobile:focus {
+  border-color: var(--gold) !important;
+}
+
+/* DESKTOP */
+
+.container.desktop {
+  padding: 0 100px;
+  /* height: 100vh; */
+  min-height: 200vh;
+  /* max-height:100vh; */
+  /* max-width: 100vw; */
+  background: url("../app/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
+}
+
+.container-flex.desktop {
+  display: flex;
+  justify-content: center;
+}
+
+.padding-container.desktop {
+  padding: .3rem 1.3rem;
+}
+
+.butterfly1.desktop {
+  position: absolute;
+  width: 8vw;
+  right: 10vw;
+  z-index: 1;
+}
+
+.butterfly2.desktop {
+  position: absolute;
+  width: 6vw;
+  right: 3vw;
+  top: 17vh;
+  z-index: 1;
+}
+
+.butterfly3.desktop {
+  position: absolute;
+  width: 15vw;
+  left: 20vw;
+  bottom: -23vh;
+  z-index: 1;
+}
+
+.butterfly3-opened.desktop {
+  position: absolute;
+  width: 15vw;
+  left: 20vw;
+  top: -15vh;
+  z-index: 1;
+}
+
+.lily1.desktop {
+  position: absolute;
+  width: 18vw;
+  left: 3vw;
+  z-index: 1;
+}
+
+.lily2.desktop {
+  position: absolute;
+  width: 16vw;
+  bottom: -40vh;
+  right: 3vw;
+  z-index: 1;
+}
+
+.lily2-opened.desktop {
+  position: absolute;
+  width: 16vw;
+  top: -20vh;
+  right: 3vw;
+  z-index: 1;
+}
+
+.button-buka-undangan.desktop {
+  padding: 14px 2vw;
+  margin: 2vh 0;
+  border: 1px solid var(--primary);
+  border-radius: 20px;
+  width: 50%;
+}
+
+.button-buka-undangan.desktop:hover {
+  background-color: var(--primary);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button-buka-undangan.desktop:hover .button-bu-text.desktop {
+  color: white !important;
+  transition: 0.3s;
+}
+
+.button-bu-text.desktop {
+  color: var(--primary);
+  font-size: var(--font-12-md);
+  align-self: center;
+}
+
+.button-a.desktop {
+  text-decoration: none;
+}
+
+.button-bu-icon.desktop {
+  display: flex;
+  justify-content: center;
+}
+
+.button-icon.desktop {
+  align-self: center;
+  padding: 0 10px 0 0;
+  width: 1.5rem;
+}
+
+.button-buka-undangan.desktop:hover img {
   filter: brightness(0) invert(1); 
 }
 
 /* v-viewer */
-.viewer-backdrop{
+.viewer-backdrop.desktop {
   background-color: rgba(0, 0, 0, .8) !important;
 }
 
-.input-gold-hover:focus {
+.input-gold-hover.desktop:focus {
   border-color: var(--gold) !important;
+}
+
+.button-container.desktop {
+  max-width: 100% !important;
+  display: flex;
+  justify-content: center;
 }

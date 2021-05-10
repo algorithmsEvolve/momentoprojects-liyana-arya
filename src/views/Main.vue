@@ -1,5 +1,8 @@
 <template>
-  <div class="container bg-vector" :class="$mq">
+  <div
+    class="container bg-vector"
+    :class="[$mq, opened ? '' : 'container-flex']"
+  >
     <!-- vector-background -->
     <background :opened="opened" />
     <cover v-model="opened" v-if="!opened" />

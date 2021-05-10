@@ -1,7 +1,7 @@
 <template>
   <!-- end vector background -->
   <div class="cover-content overflow-hidden" :class="$mq" data-aos="zoom-in">
-    <div class="cover-middle">
+    <div class="cover-middle" :class="$mq">
       <h1 class="cover-title" :class="$mq">Undangan Pernikahan</h1>
       <div class="cover-inside" :class="$mq">
         <h1 class="cover-name-1" :class="$mq">Liyana</h1>
@@ -9,23 +9,25 @@
         <h1 class="cover-name-2" :class="$mq">Arya</h1>
       </div>
       <h1 class="cover-yth" :class="$mq">Kepada Yth: nama tamu</h1>
-      <div
-        class="button-buka-undangan"
-        :class="$mq"
-        @mouseenter="change_email_icon(true)"
-        @mouseleave="change_email_icon(false)"
-        @click="open()"
-      >
-        <div class="button-bu-icon" :class="$mq">
-          <img
-            :src="email_icon"
-            alt="email-icon"
-            :class="[
-              $mq,
-              button_hovered ? 'cover-email-icon-open' : 'cover-email-icon',
-            ]"
-          />
-          <div class="button-bu-text" :class="$mq">Buka Undangan</div>
+      <div class="button-container" :class="$mq">
+        <div
+          class="button-buka-undangan"
+          :class="$mq"
+          @mouseenter="change_email_icon(true)"
+          @mouseleave="change_email_icon(false)"
+          @click="open()"
+        >
+          <div class="button-bu-icon" :class="$mq">
+            <img
+              :src="email_icon"
+              alt="email-icon"
+              :class="[
+                $mq,
+                button_hovered ? 'cover-email-icon-open' : 'cover-email-icon',
+              ]"
+            />
+            <div class="button-bu-text" :class="$mq">Buka Undangan</div>
+          </div>
         </div>
       </div>
     </div>

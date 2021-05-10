@@ -1,18 +1,20 @@
-.opening-logo-wrapper {
+/* MOBILE */
+
+.opening-logo-wrapper.mobile {
     text-align: center;
 }
 
-.opening-quotes {
+.opening-quotes.mobile {
     padding: .3rem 0;
 }
 
-.opening-quotes p {
+.opening-quotes.mobile p {
     text-align: center;
     color: var(--primary);
     font-size: var(--font-12-md);
 }
 
-.opening-quotes p.opening-surat {
+.opening-quotes.mobile p.opening-surat {
     margin: .3rem 0;
     text-align: center;
     color: var(--primary);
@@ -20,17 +22,17 @@
     font-size: var(--font-12-md);
 }
 
-.opening-photo-wrapper {
+.opening-photo-wrapper.mobile {
     display: flex;
     justify-content: center;
 }
 
-.opening-photo-container {
+.opening-photo-container.mobile {
     text-align: center;
     padding: 0 0;
 }
 
-.opening-nama {
+.opening-nama.mobile {
     padding: .8rem 0;
     color: var(--primary);
     font-size: var(--font-12-lg);
@@ -38,60 +40,193 @@
     text-align: center;
 }
 
-.opening-nama2 {
+.opening-nama2.mobile {
     color: var(--gold);
     font-size: var(--font-12);
     font-weight: 500;
 }
 
-.opening-event-group {
+.opening-event-group.mobile {
     padding: 0 1.5rem;
 }
 
-.opening-tanggal-content {
+.opening-tanggal-content.mobile {
     display: table;
     margin: 0 auto;
 }
 
-.opening-tanggal-group {
+.opening-tanggal-group.mobile {
     display: flex;
     padding: .2rem 0;
 }
 
-.opening-tanggal-font {
+.opening-tanggal-font.mobile {
     font-size: var(--font-12);
     font-weight: 400;
     color: var(--primary);
     align-self: center;
 }
 
-.opening-icon {
+.opening-icon.mobile {
     padding: 0 .5rem;
 }
 
-.opening-icon-top {
+.opening-icon-top.mobile {
     position: relative;
     top: 0;
 }
 
-.LA-logo {
+.LA-logo.mobile {
     width: 30vw;
     max-width: 200px;
 }
 
-.opening-photo {
+.opening-photo.mobile {
     width: 40vw;
     max-width: 250px;
 }
 
-.photo-left {
+.photo-left.mobile {
     padding-right: .25rem;
 }
 
-.photo-right {
+.photo-right.mobile {
     padding-left: .25rem;
 }
 
-.opening-padding-wrapper {
+.opening-padding-wrapper.mobile {
     padding: 0 1.3rem;
+}
+
+/* DESKTOP */
+
+.opening-logo-wrapper.desktop {
+    text-align: center;
+}
+
+.opening-quotes.desktop {
+    padding: .3rem 0;
+}
+
+.opening-quotes.desktop p {
+    text-align: center;
+    color: var(--primary);
+    font-size: var(--font-12-lg);
+}
+
+.opening-quotes.desktop p.opening-surat {
+    margin: .3rem 0;
+    text-align: center;
+    color: var(--primary);
+    font-weight: bolder;
+    font-size: var(--font-12-lg);
+}
+
+.opening-photo-wrapper.desktop {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+.opening-photo-container.desktop {
+    text-align: center;
+    padding: 0 0;
+}
+
+.opening-photo-container.desktop.left {
+    text-align: center;
+    padding: 0 100px 0 0;
+}
+
+.opening-photo-container.desktop.right {
+    text-align: center;
+    padding: 0 0 0 100px;
+}
+
+.opening-nama.desktop {
+    padding: .8rem 0;
+    color: var(--primary);
+    font-size: var(--font-16);
+    font-weight: 500;
+    text-align: center;
+}
+
+.opening-nama2.desktop {
+    color: var(--gold);
+    font-size: var(--font-12-lg);
+    font-weight: 500;
+}
+
+.opening-event-group.desktop {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+}
+
+.opening-tanggal-content.desktop {
+    display: table;
+    margin: 0 auto;
+}
+
+.opening-tanggal-group.desktop {
+    display: flex;
+    padding: .2rem 0;
+}
+
+.opening-tanggal-group.desktop.alamat {
+    display: flex;
+    padding: .2rem 0 .2rem 40px;
+    align-self: center;
+}
+
+.opening-tanggal-font.desktop {
+    font-size: var(--font-12-lg);
+    font-weight: 400;
+    color: var(--primary);
+    align-self: center;
+}
+
+.opening-tanggal-font.desktop.alamat {
+    font-size: var(--font-12-lg);
+    font-weight: 400;
+    color: var(--primary);
+    align-self:unset;
+}
+
+.opening-icon.desktop {
+    padding: 0 .5rem;
+}
+
+.opening-icon-top.desktop {
+    /* align-self: center; */
+    position: relative;
+    top: 0;
+}
+
+.LA-logo.desktop {
+    width: 30vw;
+    max-width: 200px;
+}
+
+.opening-photo.desktop {
+    width: 40vw;
+    max-width: 250px;
+}
+
+.photo-left.desktop {
+    padding-right: .25rem;
+}
+
+.photo-right.desktop {
+    padding-left: .25rem;
+}
+
+.opening-padding-wrapper.desktop {
+    padding: 0 1.3rem;
+}
+
+.opening-desktop-hide.desktop {
+    display: none;
 }
