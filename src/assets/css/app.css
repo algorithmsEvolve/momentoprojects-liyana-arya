@@ -16,8 +16,9 @@
   --font-12-md: .85rem;
   --font-12-lg: 1rem;
   --font-16: 1.2rem;
-  --font-40: 3.5rem;
+  --font-20: 1.6rem;
   --font-30: 2rem;
+  --font-40: 3.5rem;
   --font-50: 5rem;
 
   /* define font family */
@@ -187,7 +188,7 @@ input, textarea {
   min-height: 200vh;
   /* max-height:100vh; */
   /* max-width: 100vw; */
-  background: url("../app/background.png");
+  background: url("../app/background-desktop.png");
   background-repeat: no-repeat;
   background-size: cover;
   overflow-x: hidden !important;
