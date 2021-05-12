@@ -16,7 +16,7 @@
         v-view="viewHandler"
         view-in
       >
-        <VueSlickCarousel v-bind="settings">
+        <VueSlickCarousel v-bind="settings" v-viewer>
           <div v-for="(item, index) in kisah_kami_icon" :key="index">
             <KisahKamiCard :src="item.icon" :index="item.index" />
           </div>
