@@ -1,7 +1,11 @@
 <template>
   <div id="rsvp">
     <!-- MOBILE -->
-    <div class="desktop-hide padding-container" :class="$mq">
+    <div
+      v-if="$mq == 'mobile'"
+      class="desktop-hide padding-container"
+      :class="$mq"
+    >
       <p class="rsvp" data-aos="fade-down" :class="$mq">RSVP</p>
       <div class="form-rsvp-container" data-aos="fade-up" :class="$mq">
         <div class="rsvp-header-container" :class="$mq">
@@ -158,7 +162,11 @@
     </div>
 
     <!-- DESKTOP -->
-    <div class="mobile-hide padding-container" :class="$mq">
+    <div
+      v-if="$mq == 'desktop'"
+      class="mobile-hide padding-container"
+      :class="$mq"
+    >
       <p class="rsvp" data-aos="fade-down" :class="$mq">RSVP</p>
       <div class="form-rsvp-container" data-aos="fade-up" :class="$mq">
         <div class="rsvp-header-container" :class="$mq">
