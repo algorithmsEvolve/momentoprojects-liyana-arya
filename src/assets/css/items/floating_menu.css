@@ -39,6 +39,6 @@
 
 /* DESKTOP */
 
-.sticky-wrapper.desktop {
-    display: hidden;
+.hide.desktop {
+    display: none;
 }

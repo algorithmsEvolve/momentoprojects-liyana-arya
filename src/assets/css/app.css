@@ -18,6 +18,7 @@
   --font-16: 1.2rem;
   --font-20: 1.6rem;
   --font-30: 2rem;
+  --font-33: 2.3rem;
   --font-40: 3.5rem;
   --font-50: 5rem;
 
@@ -279,7 +280,7 @@ input, textarea {
 
 .button-bu-text.desktop {
   color: var(--primary);
-  font-size: var(--font-12-md);
+  font-size: var(--font-12-lg);
   align-self: center;
 }
 

@@ -1,7 +1,7 @@
 <template>
   <div
     :class="$mq"
-    class="sticky-wrapper"
+    class="sticky-wrapper hide"
     data-aos="zoom-in-up"
     data-aos-offset="0"
   >

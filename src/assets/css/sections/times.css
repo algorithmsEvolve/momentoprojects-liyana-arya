@@ -168,7 +168,7 @@
 .prokes-text-wrapper.desktop p {
     text-align: center;
     color: var(--primary);
-    font-size: var(--font-12-md);
+    font-size: var(--font-12-lg);
 }
 
 .prokes-content-container.desktop {
@@ -178,7 +178,7 @@
 
 .prokes-text.desktop p {
     text-align: center;
-    font-size: var(--font-12);
+    font-size: var(--font-12-md);
     color: var(--primary);
     font-family: var(--open-sans);
     font-weight: bold;

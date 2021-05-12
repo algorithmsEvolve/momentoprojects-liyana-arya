@@ -1,15 +1,12 @@
 <template>
-  <div
-    class="padding-container"
-    @mouseenter="isPaused = false"
-    @mouseover="isPaused = false"
-    @scroll.native="isPaused = false"
-  >
-    <div class="gallery-container" id="gallery">
-      <div class="kisah-kami-text" data-aos="fade-down">
+  <div class="padding-container" id="gallery">
+    <!-- MOBILE -->
+    <div class="desktop-hide gallery-container" :class="$mq">
+      <div class="kisah-kami-text" data-aos="fade-down" :class="$mq">
         <p>Kisah Kami</p>
       </div>
       <div
+        :class="$mq"
         class="kisah-kami-slider-container"
         data-aos="fade-up"
         v-view="viewHandler"
@@ -21,45 +18,42 @@
           </div>
         </VueSlickCarousel>
       </div>
-      <div
-        class="photo-gallery-container"
-        v-viewer="options"
-        @click="isPaused = true"
-      >
-        <div class="two-photo">
-          <transition name="fade" mode="out-in">
+      <div class="photo-gallery-container" :class="$mq" v-viewer="options">
+        <VueSlickCarousel v-bind="gallery_settings">
+          <div v-for="(item, index) in gallery_img" :key="index">
+            <GalleryCard :src="item.img" :index="index" />
+          </div>
+        </VueSlickCarousel>
+      </div>
+    </div>
+
+    <!-- DESKTOP -->
+    <div class="mobile-hide gallery-container" :class="$mq">
+      <div class="kisah-kami-container" :class="$mq">
+        <div class="kisah-kami-desktop-wrapper" :class="$mq">
+          <div class="kisah-kami-text" data-aos="fade-down" :class="$mq">
+            <p>Kisah Kami</p>
+          </div>
+          <div
+            class="kisah-kami-picture scrollbox"
+            ref="story"
+            @click="scrollnow($event)"
+          >
             <img
-              data-aos="fade-right"
-              :src="require('../assets/app/gallery/' + selected[0].image)"
-              alt="photo-1"
-              :key="selected[0].image"
-              class="two-photo-img"
+              src="../assets/app/kisah_kami/story.png"
+              alt="kisah-kami-story"
+              class="kisah-kami-img scrollbox-content"
               :class="$mq"
             />
-          </transition>
-          <transition name="fade" mode="out-in">
-            <img
-              data-aos="fade-left"
-              :src="require('../assets/app/gallery/' + selected[1].image)"
-              :key="selected[1].image"
-              alt="photo-2"
-              class="two-photo-img padding-left"
-              :class="$mq"
-            />
-          </transition>
+          </div>
         </div>
-        <div class="one-photo">
-          <transition name="fade" mode="out-in">
-            <img
-              data-aos="fade-up"
-              :src="require('../assets/app/gallery/' + selected[2].image)"
-              :key="selected[2].image"
-              alt="photo-3"
-              class="one-photo-img"
-              :class="$mq"
-            />
-          </transition>
-        </div>
+      </div>
+      <div class="photo-gallery-container" :class="$mq" v-viewer="options">
+        <VueSlickCarousel v-bind="gallery_settings">
+          <div v-for="(item, index) in gallery_img" :key="index">
+            <GalleryCard :src="item.img" :index="index" />
+          </div>
+        </VueSlickCarousel>
       </div>
     </div>
   </div>
@@ -71,8 +65,49 @@
   transition: opacity 0.5s;
   transition-duration: 3s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+
+.fade-enter,
+.fade-leave-to {
   opacity: 0;
+}
+
+.scrollbox {
+  width: 10em;
+  height: 10em;
+  overflow: auto;
+  visibility: hidden;
+}
+
+.scrollbox-content,
+.scrollbox:hover,
+.scrollbox:focus {
+  visibility: visible;
+}
+</style>
+
+<style lang="scss">
+.slick-dots:not(#_) {
+  button:before {
+    color: #b1b1b1;
+    opacity: 1;
+  }
+
+  display: flex !important;
+  left: 50%;
+  top: 90%;
+  transform: translateX(-50%);
+  border-radius: 1rem;
+  width: auto;
+  margin: 0 auto;
+  padding: 0.25rem;
+}
+
+.slick-dots li.slick-active button:before {
+  color: white !important;
+}
+
+.slick-dots li button:before {
+  font-size: 18px;
 }
 </style>
 
@@ -81,10 +116,12 @@ import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 import KisahKamiCard from "../components/items/KisahKamiCard";
+import GalleryCard from "../components/items/GalleryCard";
 export default {
   components: {
     VueSlickCarousel,
     KisahKamiCard,
+    GalleryCard,
   },
   data() {
     return {
@@ -119,6 +156,26 @@ export default {
           //   "3 tahun berlalu, rasa yg kami miliki tetap sama. Kami memutuskan utk ke jenjang yang lebih serius, yaitu menikah.",
         },
       ],
+      gallery_img: [
+        {
+          img: "gallery_1.jpg",
+        },
+        {
+          img: "gallery_2.jpg",
+        },
+        {
+          img: "gallery_3.jpg",
+        },
+        {
+          img: "gallery_4.jpg",
+        },
+        {
+          img: "gallery_5.jpg",
+        },
+        {
+          img: "gallery_6.jpg",
+        },
+      ],
       settings: {
         dots: false,
         infinite: false,
@@ -130,43 +187,34 @@ export default {
         autoplay: false,
         autoplaySpeed: 6000,
       },
+      gallery_settings: {
+        accessibility: false,
+        dots: true,
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        adaptiveHeight: true,
+        autoplay: true,
+        autoplaySpeed: 6000,
+        cssEase: "linear",
+      },
       autoplay_indicator: 0,
       indicator_img_change: true,
-      selected: [
-        {
-          image: "tp1.jpeg",
-        },
-        {
-          image: "tp2.jpeg",
-        },
-        {
-          image: "op1.jpeg",
-        },
-      ],
-      images: [
-        {
-          image: "tp3.jpeg",
-        },
-        {
-          image: "tp4.jpeg",
-        },
-        {
-          image: "op2.jpeg",
-        },
-        {
-          image: "tp1.jpeg",
-        },
-        {
-          image: "tp2.jpeg",
-        },
-        {
-          image: "op1.jpeg",
-        },
-      ],
-      isPaused: false,
+      story_scroll: 0,
     };
   },
   methods: {
+    scrollnow(event) {
+      if (this.story_scroll >= 495) {
+        this.story_scroll = 0;
+      } else {
+        this.story_scroll += 165;
+      }
+      this.$refs.story.scrollTo({
+        top: this.story_scroll,
+        behavior: "smooth",
+      });
+    },
     viewHandler() {
       if (this.autoplay_indicator > 2) {
         this.settings.autoplay = true;
@@ -174,26 +222,11 @@ export default {
         this.autoplay_indicator++;
       }
     },
-    changeImage() {
-      if (this.indicator_img_change == true) {
-        this.selected[0].image = this.images[0].image;
-        this.selected[1].image = this.images[1].image;
-        this.selected[2].image = this.images[2].image;
-        this.indicator_img_change = false;
-      } else {
-        this.selected[0].image = this.images[3].image;
-        this.selected[1].image = this.images[4].image;
-        this.selected[2].image = this.images[5].image;
-        this.indicator_img_change = true;
-      }
-    },
   },
   created() {
     setInterval(() => {
-      if (!this.isPaused) {
-        this.changeImage();
-      }
-    }, 8000);
+      this.scrollnow();
+    }, 6000);
   },
 };
 </script>
