@@ -101,7 +101,7 @@
 .times-desktop-container.desktop {
     margin-top: 46px;
     padding: 1rem 1rem 1rem 0;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.35);
     border-radius: 15px;
 }
 

@@ -1,102 +1,239 @@
 <template>
   <div id="live">
-    <div class="padding-container">
-      <p class="guest-title" data-aos="fade-down">Live Streaming</p>
-      <div class="youtube-video" data-aos="fade-up">
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/pXjpXQwvYAI"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </div>
-      <div class="ucapan-doa">
-        <div class="ud-line-img">
+    <!--MOBILE -->
+    <div v-if="$mq == 'mobile'" class="guest-mobile" :class="$mq">
+      <div class="padding-container" :class="$mq">
+        <p class="guest-title" data-aos="fade-down" :class="$mq">
+          Live Streaming
+        </p>
+        <div class="youtube-video" data-aos="fade-up" :class="$mq">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/pXjpXQwvYAI"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="ucapan-doa" :class="$mq">
+          <div class="ud-line-img" :class="$mq">
+            <img
+              src="../assets/app/line-2.png"
+              alt="line2-icon"
+              class="line2-icon"
+              :class="$mq"
+            />
+          </div>
+          <p class="guest-title" data-aos="fade-down" :class="$mq">
+            Ucapan & Doa
+          </p>
+          <div data-aos="fade-up" class="ud-container" :class="$mq">
+            <template v-if="wishes_data.length">
+              <template v-for="wish in wishes_data">
+                <div class="ud-wrapper" :key="wish.id" :class="$mq">
+                  <div class="nama" :class="$mq">{{ wish.name }}</div>
+                  <div class="ucapan" :class="$mq">{{ wish.message }}</div>
+                </div>
+              </template>
+            </template>
+            <template v-else>
+              <div class="ud-wrapper" :class="$mq">
+                <div class="ucapan" :class="$mq">Belum ada ucapan.</div>
+              </div>
+            </template>
+          </div>
+        </div>
+        <div class="guest-line-bottom">
           <img
-            src="../assets/app/line-2.png"
-            alt="line2-icon"
-            class="line2-icon"
+            src="../assets/app/lily-5.png"
+            alt="lily5-icon"
+            class="lily5-icon"
             :class="$mq"
           />
         </div>
-        <p class="guest-title" data-aos="fade-down">Ucapan & Doa</p>
-        <div data-aos="fade-up" class="ud-container">
-          <template v-if="wishes_data.length">
-            <template v-for="wish in wishes_data">
-              <div class="ud-wrapper" :key="wish.id">
-                <div class="nama">{{ wish.name }}</div>
-                <div class="ucapan">{{ wish.message }}</div>
-              </div>
-            </template>
-          </template>
-          <template v-else>
-            <div class="ud-wrapper">
-              <div class="ucapan">Belum ada ucapan.</div>
+        <div class="form-ucapan-wrapper" data-aos="fade-up" :class="$mq">
+          <div class="form-group" :class="$mq">
+            <div class="rsvp-label" :class="$mq">
+              <p>Nama</p>
             </div>
-          </template>
+            <div class="rsvp-input" :class="$mq">
+              <input
+                autocomplete="off"
+                type="text"
+                name="nama"
+                placeholder="Masukkan nama anda..."
+                class="input-gold-hover"
+                :class="$mq"
+                v-model="input_form.name"
+              />
+            </div>
+          </div>
+          <div class="form-group" :class="$mq">
+            <div class="rsvp-label" :class="$mq">
+              <p>Pesan</p>
+            </div>
+            <div class="rsvp-input" :class="$mq">
+              <textarea
+                type="text"
+                name="nama"
+                placeholder="Tulis pesanmu..."
+                cols="30"
+                rows="5"
+                wrap="off"
+                class="input-gold-hover"
+                :class="$mq"
+                @keyup="change_message_length"
+                v-model="input_form.message"
+              />
+              <div class="text-length" :class="$mq">
+                <p>{{ message_length }} / 200</p>
+              </div>
+            </div>
+          </div>
+          <div class="button-container" :class="$mq">
+            <div
+              class="button-buka-undangan"
+              :class="$mq"
+              @click="submit_wish()"
+            >
+              <div class="button-bu-icon" :class="$mq">
+                <div class="button-bu-text" :class="$mq">Kirim</div>
+              </div>
+            </div>
+          </div>
+          <div class="powered" :class="$mq">
+            <p>Powered by: momentoprojects.id</p>
+          </div>
         </div>
       </div>
-      <div class="guest-line-bottom">
+      <div class="powered-lily-bottom" :class="$mq" style="position: relative">
         <img
-          src="../assets/app/lily-5.png"
-          alt="lily5-icon"
-          class="lily5-icon"
+          src="../assets/app/lily-6.png"
+          alt="lily6-icon"
+          class="lily6-icon"
           :class="$mq"
         />
       </div>
-      <div class="form-ucapan-wrapper" data-aos="fade-up">
-        <div class="form-group">
-          <div class="rsvp-label">
-            <p>Nama</p>
-          </div>
-          <div class="rsvp-input">
-            <input
-              autocomplete="off"
-              type="text"
-              name="nama"
-              placeholder="Masukkan nama anda..."
-              class="input-gold-hover"
-              v-model="input_form.name"
-            />
-          </div>
+    </div>
+
+    <!-- DESKTOP -->
+    <div v-if="$mq == 'desktop'" class="guest-desktop" :class="$mq">
+      <div class="padding-container" :class="$mq">
+        <p class="guest-title" data-aos="fade-down" :class="$mq">
+          Live Streaming
+        </p>
+        <div class="youtube-video" data-aos="fade-up" :class="$mq">
+          <iframe
+            width="795"
+            height="448"
+            src="https://www.youtube.com/embed/pXjpXQwvYAI"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
         </div>
-        <div class="form-group">
-          <div class="rsvp-label">
-            <p>Pesan</p>
-          </div>
-          <div class="rsvp-input">
-            <textarea
-              type="text"
-              name="nama"
-              placeholder="Tulis pesanmu..."
-              cols="30"
-              rows="5"
-              wrap="off"
-              class="input-gold-hover"
-              @keyup="change_message_length"
-              v-model="input_form.message"
+        <div class="ucapan-doa" :class="$mq">
+          <div class="ud-line-img" :class="$mq">
+            <img
+              src="../assets/app/line-1.png"
+              alt="line1-icon"
+              class="line1-icon"
+              :class="$mq"
             />
-            <div class="text-length">
-              <p>{{ message_length }} / 200</p>
+          </div>
+          <p class="guest-title" data-aos="fade-down" :class="$mq">
+            Ucapan & Doa
+          </p>
+          <div class="flex-ud">
+            <div data-aos="fade-up" class="ud-container" :class="$mq">
+              <div class="ud-scroll" :class="$mq">
+                <template v-if="wishes_data.length">
+                  <template v-for="wish in wishes_data">
+                    <div class="ud-wrapper" :key="wish.id" :class="$mq">
+                      <div class="nama" :class="$mq">{{ wish.name }}</div>
+                      <div class="ucapan" :class="$mq">{{ wish.message }}</div>
+                    </div>
+                  </template>
+                </template>
+                <template v-else>
+                  <div class="ud-wrapper" :class="$mq">
+                    <div class="ucapan" :class="$mq">Belum ada ucapan.</div>
+                  </div>
+                </template>
+              </div>
+            </div>
+            <div>
+              <div class="form-ucapan-wrapper" data-aos="fade-up" :class="$mq">
+                <div class="form-group" :class="$mq">
+                  <div class="rsvp-label" :class="$mq">
+                    <p>Nama</p>
+                  </div>
+                  <div class="rsvp-input" :class="$mq">
+                    <input
+                      autocomplete="off"
+                      type="text"
+                      name="nama"
+                      placeholder="Masukkan nama anda..."
+                      class="input-gold-hover"
+                      :class="$mq"
+                      v-model="input_form.name"
+                    />
+                  </div>
+                </div>
+                <div class="form-group" :class="$mq">
+                  <div class="rsvp-label" :class="$mq">
+                    <p>Pesan</p>
+                  </div>
+                  <div class="rsvp-input" :class="$mq">
+                    <textarea
+                      type="text"
+                      name="nama"
+                      placeholder="Tulis pesanmu..."
+                      cols="30"
+                      rows="5"
+                      wrap="off"
+                      class="input-gold-hover"
+                      :class="$mq"
+                      @keyup="change_message_length"
+                      v-model="input_form.message"
+                    />
+                    <div class="text-length" :class="$mq">
+                      <p>{{ message_length }} / 200</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="button-container" :class="$mq">
+                  <div
+                    class="button-buka-undangan"
+                    :class="$mq"
+                    @click="submit_wish()"
+                  >
+                    <div class="button-bu-icon" :class="$mq">
+                      <div class="button-bu-text" :class="$mq">Kirim</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="button-container">
-          <div class="button-buka-undangan" :class="$mq" @click="submit_wish()">
-            <div class="button-bu-icon" :class="$mq">
-              <div class="button-bu-text" :class="$mq">Kirim</div>
-            </div>
-          </div>
-        </div>
-        <div class="powered">
+        <div class="powered" :class="$mq">
           <p>Powered by: momentoprojects.id</p>
+        </div>
+        <div class="guest-line-bottom">
+          <img
+            src="../assets/app/lily-5.png"
+            alt="lily5-icon"
+            class="lily5-icon"
+            :class="$mq"
+          />
         </div>
       </div>
     </div>
-    <div class="powered-lily-bottom" style="position: relative">
+    <div class="powered-lily-bottom" :class="$mq" style="position: relative">
       <img
         src="../assets/app/lily-6.png"
         alt="lily6-icon"
@@ -115,7 +252,6 @@ const currentDate = new Date();
 const timestamp = currentDate.getTime();
 
 export default {
-  props: ["wishes_data"],
   data() {
     return {
       id: null,
@@ -238,6 +374,7 @@ export default {
     },
   },
   created() {
+    this.get_wishes();
     this.get_id();
   },
 };

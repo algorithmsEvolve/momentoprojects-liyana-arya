@@ -57,7 +57,7 @@
 }
 
 .kisah-kami-text.desktop p {
-    font-size: var(--font-33);
+    font-size: var(--font-35);
     font-family: var(--ants);
     text-align: center;
 }
@@ -77,7 +77,7 @@
 
 .photo-gallery-container.desktop {
     text-align: center;
-    min-height: 60vh;
+    width: 31vw;
 }
 
 .two-photo-img.desktop {
@@ -108,13 +108,10 @@
 
 .kisah-kami-container.desktop {
     display: flex;
+    justify-content: space-evenly;
 }
 
 .kisah-kami-picture {
     height: 75vh;
     width: 100%;
 }
-/* 
-.kisah-kami-picture:hover {
-    overflow-y: scroll;
-} */

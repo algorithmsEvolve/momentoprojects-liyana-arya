@@ -167,52 +167,63 @@
       class="mobile-hide padding-container"
       :class="$mq"
     >
-      <p class="rsvp" data-aos="fade-down" :class="$mq">RSVP</p>
+      <img
+        src="../assets/app/lily-3.png"
+        alt="lily3-icon"
+        class="lily3-icon"
+        :class="$mq"
+      />
+
+      <div class="rsvp-header-container" :class="$mq">
+        <p class="rsvp" data-aos="fade-down" :class="$mq">RSVP</p>
+        <p class="rsvp-title" data-aos="fade-down" :class="$mq">
+          Merupakan suatu kehormatan apabila Bapak/Ibu/Saudara/i berkenan hadir
+          atau memberikan doa bila berhalangan. Atas kehadiran dan doanya, kami
+          ucapkan terimakasih.
+        </p>
+      </div>
       <div class="form-rsvp-container" data-aos="fade-up" :class="$mq">
-        <div class="rsvp-header-container" :class="$mq">
+        <div class="photo-rsvp" :class="$mq">
           <img
-            src="../assets/app/lily-3.png"
-            alt="lily3-icon"
-            class="lily3-icon"
+            src="../assets/app/gallery/rsvp.jpg"
+            alt="rsvp-img"
+            class="rsvp-img"
             :class="$mq"
           />
-          <p class="rsvp-title" :class="$mq">
-            Merupakan suatu kehormatan apabila Bapak/Ibu/Saudara/i berkenan
-            hadir atau memberikan doa bila berhalangan. Atas kehadiran dan
-            doanya, kami ucapkan terimakasih.
-          </p>
         </div>
         <div class="form-rsvp-wrapper" :class="$mq">
-          <div class="form-group" :class="$mq">
-            <div class="rsvp-label" :class="$mq">
-              <p>Nama</p>
+          <div class="flex" :class="$mq">
+            <div class="form-group" :class="$mq">
+              <div class="rsvp-label" :class="$mq">
+                <p>Nama</p>
+              </div>
+              <div class="rsvp-input" :class="$mq">
+                <input
+                  autocomplete="off"
+                  type="text"
+                  name="nama"
+                  placeholder="Masukkan nama anda..."
+                  class="input-gold-hover input-flex"
+                  :class="$mq"
+                  v-model="input_form.name"
+                />
+              </div>
             </div>
-            <div class="rsvp-input" :class="$mq">
-              <input
-                autocomplete="off"
-                type="text"
-                name="nama"
-                placeholder="Masukkan nama anda..."
-                class="input-gold-hover"
-                :class="$mq"
-                v-model="input_form.name"
-              />
-            </div>
-          </div>
-          <div class="form-group" :class="$mq">
-            <div class="rsvp-label" :class="$mq">
-              <p>No. Handphone</p>
-            </div>
-            <div class="rsvp-input" :class="$mq">
-              <input
-                autocomplete="off"
-                type="text"
-                name="nama"
-                placeholder="Masukkan nomor handphone..."
-                class="input-gold-hover"
-                :class="$mq"
-                v-model="input_form.phone"
-              />
+            <div class="form-group" :class="$mq">
+              <div class="rsvp-label" :class="$mq">
+                <p>No. Handphone</p>
+              </div>
+              <div class="rsvp-input" :class="$mq">
+                <input
+                  autocomplete="off"
+                  type="text"
+                  name="nama"
+                  placeholder="Masukkan nomor handphone..."
+                  class="input-gold-hover input-flex"
+                  :class="$mq"
+                  v-model="input_form.phone"
+                />
+              </div>
             </div>
           </div>
           <div class="form-group" :class="$mq">
@@ -309,14 +320,6 @@
                 <div class="button-bu-text" :class="$mq">Kirim</div>
               </div>
             </div>
-          </div>
-          <div class="rsvp-footer-img" :class="$mq">
-            <img
-              src="../assets/app/lily-4.png"
-              alt="lily4-icon"
-              class="lily4-icon"
-              :class="$mq"
-            />
           </div>
         </div>
       </div>

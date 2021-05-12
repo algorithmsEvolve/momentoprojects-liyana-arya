@@ -1,7 +1,11 @@
 <template>
   <div class="padding-container" id="gallery">
     <!-- MOBILE -->
-    <div class="desktop-hide gallery-container" :class="$mq">
+    <div
+      v-if="$mq == 'mobile'"
+      class="desktop-hide gallery-container"
+      :class="$mq"
+    >
       <div class="kisah-kami-text" data-aos="fade-down" :class="$mq">
         <p>Kisah Kami</p>
       </div>
@@ -18,7 +22,7 @@
           </div>
         </VueSlickCarousel>
       </div>
-      <div class="photo-gallery-container" :class="$mq" v-viewer="options">
+      <div class="photo-gallery-container" :class="$mq">
         <VueSlickCarousel v-bind="gallery_settings">
           <div v-for="(item, index) in gallery_img" :key="index">
             <GalleryCard :src="item.img" :index="index" />
@@ -28,13 +32,18 @@
     </div>
 
     <!-- DESKTOP -->
-    <div class="mobile-hide gallery-container" :class="$mq">
+    <div
+      v-if="$mq == 'desktop'"
+      class="mobile-hide gallery-container"
+      :class="$mq"
+    >
       <div class="kisah-kami-container" :class="$mq">
         <div class="kisah-kami-desktop-wrapper" :class="$mq">
           <div class="kisah-kami-text" data-aos="fade-down" :class="$mq">
             <p>Kisah Kami</p>
           </div>
           <div
+            data-aos="fade-down"
             class="kisah-kami-picture scrollbox"
             ref="story"
             @click="scrollnow($event)"
@@ -47,13 +56,13 @@
             />
           </div>
         </div>
-      </div>
-      <div class="photo-gallery-container" :class="$mq" v-viewer="options">
-        <VueSlickCarousel v-bind="gallery_settings">
-          <div v-for="(item, index) in gallery_img" :key="index">
-            <GalleryCard :src="item.img" :index="index" />
-          </div>
-        </VueSlickCarousel>
+        <div class="photo-gallery-container" :class="$mq" data-aos="fade-up">
+          <VueSlickCarousel v-bind="gallery_settings">
+            <div v-for="(item, index) in gallery_img" :key="index">
+              <GalleryCard :src="item.img" :index="index" />
+            </div>
+          </VueSlickCarousel>
+        </div>
       </div>
     </div>
   </div>
@@ -195,6 +204,7 @@ export default {
         slidesToScroll: 1,
         adaptiveHeight: true,
         autoplay: true,
+        speed: 400,
         autoplaySpeed: 6000,
         cssEase: "linear",
       },

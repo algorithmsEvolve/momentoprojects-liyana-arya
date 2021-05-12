@@ -1,7 +1,7 @@
 <template>
   <div id="time">
     <!-- MOBILE -->
-    <div class="desktop-hide" :class="$mq">
+    <div v-if="$mq == 'mobile'" class="desktop-hide" :class="$mq">
       <div class="countdown-container" data-aos="fade-down" :class="$mq">
         <div class="countdown-wrapper" :class="$mq">
           <div class="count" :class="$mq">
@@ -130,7 +130,11 @@
     </div>
 
     <!-- DESKTOP -->
-    <div class="mobile-hide times-desktop-container" :class="$mq">
+    <div
+      v-if="$mq == 'desktop'"
+      class="mobile-hide times-desktop-container"
+      :class="$mq"
+    >
       <div class="flex-container" :class="$mq">
         <div class="left" :class="$mq">
           <div class="maps-container" data-aos="fade-up" :class="$mq">
