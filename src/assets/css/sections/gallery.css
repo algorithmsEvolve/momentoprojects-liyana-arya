@@ -50,6 +50,10 @@
     transform: scale(1.05);
 }
 
+.hoverable.mobile:hover {
+    cursor: pointer;
+}
+
 /* DESKTOP */
 
 .desktop-hide.desktop {
@@ -114,4 +118,8 @@
 .kisah-kami-picture {
     height: 75vh;
     width: 100%;
+}
+
+.hoverable.desktop:hover {
+    cursor: pointer;
 }

@@ -56,8 +56,12 @@
             />
           </div>
         </div>
-        <div class="photo-gallery-container" :class="$mq" data-aos="fade-up">
-          <VueSlickCarousel v-bind="gallery_settings">
+        <div
+          class="photo-gallery-container hoverable"
+          :class="$mq"
+          data-aos="fade-up"
+        >
+          <VueSlickCarousel v-bind="gallery_settings" v-viewer>
             <div v-for="(item, index) in gallery_img" :key="index">
               <GalleryCard :src="item.img" :index="index" />
             </div>
