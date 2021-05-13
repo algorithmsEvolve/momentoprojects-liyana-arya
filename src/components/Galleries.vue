@@ -23,7 +23,7 @@
         </VueSlickCarousel>
       </div>
       <div class="photo-gallery-container" :class="$mq">
-        <VueSlickCarousel v-bind="gallery_settings">
+        <VueSlickCarousel v-bind="gallery_settings" v-viewer>
           <div v-for="(item, index) in gallery_img" :key="index">
             <GalleryCard :src="item.img" :index="index" />
           </div>
