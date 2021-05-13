@@ -1,4 +1,6 @@
-.sticky-wrapper {
+/* MOBILE */
+
+.sticky-wrapper.mobile {
     position: fixed;
     bottom: 40px;
     right: 0;
@@ -33,4 +35,10 @@
 .fb-icon:hover {
     cursor: pointer;
     filter: contrast(138%) brightness(68%) saturate(81%) hue-rotate(17deg);
+}
+
+/* DESKTOP */
+
+.hide.desktop {
+    display: none;
 }

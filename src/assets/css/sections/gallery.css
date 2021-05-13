@@ -1,45 +1,125 @@
-.kisah-kami-text p {
+/* MOBILE */
+
+.mobile-hide.mobile {
+    display: none;
+}
+
+.kisah-kami-text.mobile p {
     font-size: 2rem;
     font-family: var(--ants);
     text-align: center;
 }
 
-.kisah-kami-slider-container {
+.kisah-kami-slider-container.mobile {
     width: 100%;
     margin: 20px auto;
 }
 
-.gallery-container {
+.gallery-container.mobile {
     padding: 2.5rem 0 1rem 0;
 }
 
-.photo-gallery-container {
+.photo-gallery-container.mobile {
     text-align: center;
     min-height: 60vh;
 }
 
-.two-photo-img {
+.two-photo-img.mobile {
     width: 48.5%;
     transition: ease 1s;
 }
 
-.padding-left {
+.padding-left.mobile {
     padding: 0 0 0 3%;
 }
 
-.one-photo-img {
+.one-photo-img.mobile {
     width: 100%;
     transition: ease 1s;
 }
 
-.two-photo {
+.two-photo.mobile {
     display: flex;
     justify-content: center;
     padding: 0 0 3% 0;
 }
 
-.one-photo-img:hover, .two-photo-img:hover {
+.one-photo-img.mobile:hover, .two-photo-img.mobile:hover {
     cursor: pointer;
     transition: ease .5s;
     transform: scale(1.05);
+}
+
+.hoverable.mobile:hover {
+    cursor: pointer;
+}
+
+/* DESKTOP */
+
+.desktop-hide.desktop {
+    display: none;
+}
+
+.kisah-kami-text.desktop p {
+    font-size: var(--font-35);
+    font-family: var(--ants);
+    text-align: center;
+}
+
+.kisah-kami-text.desktop {
+    padding: 1.8rem 0;
+}
+
+.kisah-kami-slider-container.desktop {
+    width: 100%;
+    margin: 20px auto;
+}
+
+.gallery-container.desktop {
+    padding: 1rem 0 1rem 0;
+}
+
+.photo-gallery-container.desktop {
+    text-align: center;
+    width: 31vw;
+}
+
+.two-photo-img.desktop {
+    width: 48.5%;
+    transition: ease 1s;
+}
+
+.padding-left.desktop {
+    padding: 0 0 0 3%;
+}
+
+.one-photo-img.desktop {
+    width: 100%;
+    transition: ease 1s;
+}
+
+.two-photo.desktop {
+    display: flex;
+    justify-content: center;
+    padding: 0 0 3% 0;
+}
+
+.one-photo-img.desktop:hover, .two-photo-img.desktop:hover {
+    cursor: pointer;
+    transition: ease .5s;
+    transform: scale(1.05);
+}
+
+.kisah-kami-container.desktop {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.kisah-kami-picture {
+    height: 75vh;
+    width: 100%;
+}
+
+.hoverable.desktop:hover {
+    cursor: pointer;
 }

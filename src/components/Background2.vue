@@ -24,4 +24,8 @@ export default {};
   width: 45vw;
   padding: 0 0 0 0.5rem;
 }
+
+.line1.desktop {
+  display: none;
+}
 </style>

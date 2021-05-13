@@ -1,19 +1,22 @@
 <template>
-  <div class="container bg-vector" :class="$mq">
+  <div
+    class="container bg-vector"
+    :class="[$mq, opened ? '' : 'container-flex']"
+  >
     <!-- vector-background -->
-    <background :opened="opened" />
-    <cover v-model="opened" v-if="!opened" />
+    <background :opened="opened"></background>
+    <cover v-model="opened" v-if="!opened"></cover>
     <br v-show="opened" />
     <!-- <transition name="fade" mode="in-out"> -->
-    <opening v-if="opened" />
-    <times v-if="opened" />
+    <opening v-if="opened"></opening>
+    <times v-if="opened"></times>
     <template v-if="opened">
-      <background2 />
-      <galleries />
-      <rsvp />
-      <guest :wishes_data="wishes_data" />
+      <background2></background2>
+      <galleries></galleries>
+      <rsvp></rsvp>
+      <guest></guest>
     </template>
-    <floating_menu v-if="opened" />
+    <floating_menu v-if="opened"></floating_menu>
     <!-- </transition> -->
   </div>
 </template>
@@ -56,29 +59,8 @@ export default {
       test: "hidden",
     };
   },
-  methods: {
-    get_wishes() {
-      wishesRef
-        .orderBy("createdAt", "desc")
-        .get()
-        .then((querySnapshot) => {
-          this.wishes_data = [];
-          querySnapshot.forEach((doc) => {
-            this.wishes_data.push({
-              id: doc.id,
-              name: doc.data().name,
-              message: doc.data().message,
-            });
-          });
-        })
-        .catch((error) => {
-          console.log("Error getting documents: ", error);
-        });
-    },
-  },
-  created() {
-    this.get_wishes();
-  },
+  methods: {},
+  created() {},
 };
 </script>
 

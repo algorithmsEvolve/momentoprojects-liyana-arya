@@ -1,31 +1,33 @@
 <template>
   <!-- end vector background -->
   <div class="cover-content overflow-hidden" :class="$mq" data-aos="zoom-in">
-    <div class="cover-middle">
+    <div class="cover-middle" :class="$mq">
       <h1 class="cover-title" :class="$mq">Undangan Pernikahan</h1>
       <div class="cover-inside" :class="$mq">
         <h1 class="cover-name-1" :class="$mq">Liyana</h1>
         <h1 class="cover-name-and" :class="$mq">&</h1>
         <h1 class="cover-name-2" :class="$mq">Arya</h1>
       </div>
-      <h1 class="cover-yth" :class="$mq">Kepada Yth: nama tamu</h1>
-      <div
-        class="button-buka-undangan"
-        :class="$mq"
-        @mouseenter="change_email_icon(true)"
-        @mouseleave="change_email_icon(false)"
-        @click="open()"
-      >
-        <div class="button-bu-icon" :class="$mq">
-          <img
-            :src="email_icon"
-            alt="email-icon"
-            :class="[
-              $mq,
-              button_hovered ? 'cover-email-icon-open' : 'cover-email-icon',
-            ]"
-          />
-          <div class="button-bu-text" :class="$mq">Buka Undangan</div>
+      <h1 class="cover-yth" :class="$mq">{{ for_guest }}</h1>
+      <div class="button-container" :class="$mq">
+        <div
+          class="button-buka-undangan"
+          :class="$mq"
+          @mouseenter="change_email_icon(true)"
+          @mouseleave="change_email_icon(false)"
+          @click="open()"
+        >
+          <div class="button-bu-icon" :class="$mq">
+            <img
+              :src="email_icon"
+              alt="email-icon"
+              :class="[
+                $mq,
+                button_hovered ? 'cover-email-icon-open' : 'cover-email-icon',
+              ]"
+            />
+            <div class="button-bu-text" :class="$mq">Buka Undangan</div>
+          </div>
         </div>
       </div>
     </div>
@@ -33,13 +35,16 @@
 </template>
 
 <script>
-// @ is an alias to /src
+import firebase from "@/configs/firebaseConfig";
+const db = firebase.firestore();
+const guestsRef = db.collection("guests");
 
 export default {
   name: "Cover",
   data() {
     return {
       button_hovered: false,
+      for_guest: "....",
     };
   },
   computed: {
@@ -50,6 +55,25 @@ export default {
     },
   },
   methods: {
+    get_guest() {
+      guestsRef
+        .doc(this.$route.params.username)
+        .get()
+        .then((item) => {
+          if (item.exists) {
+            this.for_guest = "Kepada Yth: " + item.data().name;
+            this.$cookie.set("username", item.data().username, 1);
+            this.$cookie.set("name", item.data().name, 1);
+          } else {
+            this.for_guest = null;
+            this.$cookie.set("username", "guest", 1);
+            this.$cookie.set("name", "guest", 1);
+          }
+        })
+        .catch((error) => {
+          console.log("Error getting documents: ", error);
+        });
+    },
     change_email_icon(bool) {
       this.button_hovered = bool;
     },
@@ -60,6 +84,9 @@ export default {
       audio.play();
       this.$emit("input", true);
     },
+  },
+  created() {
+    this.get_guest();
   },
 };
 </script>

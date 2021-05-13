@@ -10,6 +10,7 @@ import "aos/dist/aos.css";
 import checkView from 'vue-check-view';
 import VueSweetalert2 from 'vue-sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
+import VueCookie from 'vue-cookie';
 
 const AOS_initial = new AOS.init({
   offset: 50,
@@ -52,6 +53,8 @@ Vue.use(AOS_initial);
 Vue.use(checkView);
 
 Vue.use(VueSweetalert2);
+
+Vue.use(VueCookie);
 
 new Vue({
   data: {

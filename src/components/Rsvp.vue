@@ -1,57 +1,64 @@
 <template>
-  <div>
-    <div id="rsvp" class="padding-container">
-      <p class="rsvp" data-aos="fade-down">RSVP</p>
-      <div class="form-rsvp-container" data-aos="fade-up">
-        <div class="rsvp-header-container">
+  <div id="rsvp">
+    <!-- MOBILE -->
+    <div
+      v-if="$mq == 'mobile'"
+      class="desktop-hide padding-container"
+      :class="$mq"
+    >
+      <p class="rsvp" data-aos="fade-down" :class="$mq">RSVP</p>
+      <div class="form-rsvp-container" data-aos="fade-up" :class="$mq">
+        <div class="rsvp-header-container" :class="$mq">
           <img
             src="../assets/app/lily-3.png"
             alt="lily3-icon"
             class="lily3-icon"
             :class="$mq"
           />
-          <p class="rsvp-title">
+          <p class="rsvp-title" :class="$mq">
             Merupakan suatu kehormatan apabila Bapak/Ibu/Saudara/i berkenan
             hadir atau memberikan doa bila berhalangan. Atas kehadiran dan
             doanya, kami ucapkan terimakasih.
           </p>
         </div>
-        <div class="form-rsvp-wrapper">
-          <div class="form-group">
-            <div class="rsvp-label">
+        <div class="form-rsvp-wrapper" :class="$mq">
+          <div class="form-group" :class="$mq">
+            <div class="rsvp-label" :class="$mq">
               <p>Nama</p>
             </div>
-            <div class="rsvp-input">
+            <div class="rsvp-input" :class="$mq">
               <input
                 autocomplete="off"
                 type="text"
                 name="nama"
                 placeholder="Masukkan nama anda..."
                 class="input-gold-hover"
+                :class="$mq"
                 v-model="input_form.name"
               />
             </div>
           </div>
-          <div class="form-group">
-            <div class="rsvp-label">
+          <div class="form-group" :class="$mq">
+            <div class="rsvp-label" :class="$mq">
               <p>No. Handphone</p>
             </div>
-            <div class="rsvp-input">
+            <div class="rsvp-input" :class="$mq">
               <input
                 autocomplete="off"
                 type="text"
                 name="nama"
                 placeholder="Masukkan nomor handphone..."
                 class="input-gold-hover"
+                :class="$mq"
                 v-model="input_form.phone"
               />
             </div>
           </div>
-          <div class="form-group">
-            <div class="rsvp-label">
+          <div class="form-group" :class="$mq">
+            <div class="rsvp-label" :class="$mq">
               <p>Pesan</p>
             </div>
-            <div class="rsvp-input">
+            <div class="rsvp-input" :class="$mq">
               <textarea
                 type="text"
                 name="nama"
@@ -60,17 +67,18 @@
                 rows="5"
                 wrap="off"
                 class="input-gold-hover"
+                :class="$mq"
                 v-model="input_form.message"
               />
             </div>
           </div>
-          <div class="form-group">
-            <div class="rsvp-label">
+          <div class="form-group" :class="$mq">
+            <div class="rsvp-label" :class="$mq">
               <p>Apa kamu akan hadir?</p>
             </div>
-            <div class="rsvp-radio-input">
+            <div class="rsvp-radio-input" :class="$mq">
               <div>
-                <div class="radio-item">
+                <div class="radio-item" :class="$mq">
                   <input
                     type="radio"
                     id="hadir"
@@ -78,11 +86,11 @@
                     :value="boolean.true"
                     v-model="input_form.attendance"
                   />
-                  <label for="hadir" class="">Aku akan hadir</label>
+                  <label for="hadir">Aku akan hadir</label>
                 </div>
               </div>
               <div>
-                <div class="radio-item">
+                <div class="radio-item" :class="$mq">
                   <input
                     type="radio"
                     id="tidak_hadir"
@@ -95,13 +103,17 @@
               </div>
             </div>
           </div>
-          <div class="form-group" v-if="input_form.attendance === true">
-            <div class="rsvp-label">
+          <div
+            class="form-group"
+            :class="$mq"
+            v-if="input_form.attendance === true"
+          >
+            <div class="rsvp-label" :class="$mq">
               <p>Bagaimana kamu akan hadir?</p>
             </div>
-            <div class="rsvp-radio-input">
+            <div class="rsvp-radio-input" :class="$mq">
               <div>
-                <div class="radio-item">
+                <div class="radio-item" :class="$mq">
                   <input
                     type="radio"
                     id="sendiri"
@@ -109,11 +121,11 @@
                     :value="how.sendiri"
                     v-model="input_form.how"
                   />
-                  <label for="sendiri" class="">Sendiri</label>
+                  <label for="sendiri">Sendiri</label>
                 </div>
               </div>
               <div>
-                <div class="radio-item">
+                <div class="radio-item" :class="$mq">
                   <input
                     type="radio"
                     id="berdua"
@@ -126,7 +138,7 @@
               </div>
             </div>
           </div>
-          <div class="button-container">
+          <div class="button-container" :class="$mq">
             <div
               @click="submit_rsvp()"
               class="button-buka-undangan"
@@ -137,13 +149,177 @@
               </div>
             </div>
           </div>
-          <div class="rsvp-footer-img">
+          <div class="rsvp-footer-img" :class="$mq">
             <img
               src="../assets/app/lily-4.png"
               alt="lily4-icon"
               class="lily4-icon"
               :class="$mq"
             />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DESKTOP -->
+    <div
+      v-if="$mq == 'desktop'"
+      class="mobile-hide padding-container"
+      :class="$mq"
+    >
+      <img
+        src="../assets/app/lily-3.png"
+        alt="lily3-icon"
+        class="lily3-icon"
+        :class="$mq"
+      />
+
+      <div class="rsvp-header-container" :class="$mq">
+        <p class="rsvp" data-aos="fade-down" :class="$mq">RSVP</p>
+        <p class="rsvp-title" data-aos="fade-down" :class="$mq">
+          Merupakan suatu kehormatan apabila Bapak/Ibu/Saudara/i berkenan hadir
+          atau memberikan doa bila berhalangan. Atas kehadiran dan doanya, kami
+          ucapkan terimakasih.
+        </p>
+      </div>
+      <div class="form-rsvp-container" data-aos="fade-up" :class="$mq">
+        <div class="photo-rsvp" :class="$mq">
+          <img
+            src="../assets/app/gallery/rsvp.jpg"
+            alt="rsvp-img"
+            class="rsvp-img"
+            :class="$mq"
+          />
+        </div>
+        <div class="form-rsvp-wrapper" :class="$mq">
+          <div class="flex" :class="$mq">
+            <div class="form-group" :class="$mq">
+              <div class="rsvp-label" :class="$mq">
+                <p>Nama</p>
+              </div>
+              <div class="rsvp-input" :class="$mq">
+                <input
+                  autocomplete="off"
+                  type="text"
+                  name="nama"
+                  placeholder="Masukkan nama anda..."
+                  class="input-gold-hover input-flex"
+                  :class="$mq"
+                  v-model="input_form.name"
+                />
+              </div>
+            </div>
+            <div class="form-group" :class="$mq">
+              <div class="rsvp-label" :class="$mq">
+                <p>No. Handphone</p>
+              </div>
+              <div class="rsvp-input" :class="$mq">
+                <input
+                  autocomplete="off"
+                  type="text"
+                  name="nama"
+                  placeholder="Masukkan nomor handphone..."
+                  class="input-gold-hover input-flex"
+                  :class="$mq"
+                  v-model="input_form.phone"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-group" :class="$mq">
+            <div class="rsvp-label" :class="$mq">
+              <p>Pesan</p>
+            </div>
+            <div class="rsvp-input" :class="$mq">
+              <textarea
+                type="text"
+                name="nama"
+                placeholder="Tulis pesanmu..."
+                cols="30"
+                rows="5"
+                wrap="off"
+                class="input-gold-hover"
+                :class="$mq"
+                v-model="input_form.message"
+              />
+            </div>
+          </div>
+          <div class="form-group" :class="$mq">
+            <div class="rsvp-label" :class="$mq">
+              <p>Apa kamu akan hadir?</p>
+            </div>
+            <div class="rsvp-radio-input" :class="$mq">
+              <div>
+                <div class="radio-item" :class="$mq">
+                  <input
+                    type="radio"
+                    id="hadir"
+                    name="kehadiran"
+                    :value="boolean.true"
+                    v-model="input_form.attendance"
+                  />
+                  <label for="hadir">Aku akan hadir</label>
+                </div>
+              </div>
+              <div>
+                <div class="radio-item" :class="$mq">
+                  <input
+                    type="radio"
+                    id="tidak_hadir"
+                    name="kehadiran"
+                    :value="boolean.false"
+                    v-model="input_form.attendance"
+                  />
+                  <label for="tidak_hadir">Maaf, tidak dapat hadir</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="form-group"
+            :class="$mq"
+            v-if="input_form.attendance === true"
+          >
+            <div class="rsvp-label" :class="$mq">
+              <p>Bagaimana kamu akan hadir?</p>
+            </div>
+            <div class="rsvp-radio-input" :class="$mq">
+              <div>
+                <div class="radio-item" :class="$mq">
+                  <input
+                    type="radio"
+                    id="sendiri"
+                    name="jumlah"
+                    :value="how.sendiri"
+                    v-model="input_form.how"
+                  />
+                  <label for="sendiri">Sendiri</label>
+                </div>
+              </div>
+              <div>
+                <div class="radio-item" :class="$mq">
+                  <input
+                    type="radio"
+                    id="berdua"
+                    name="jumlah"
+                    :value="how.berdua"
+                    v-model="input_form.how"
+                  />
+                  <label for="berdua">Berdua</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="button-container" :class="$mq">
+            <div
+              @click="submit_rsvp()"
+              class="button-buka-undangan"
+              :class="$mq"
+            >
+              <div class="button-bu-icon" :class="$mq">
+                <div class="button-bu-text" :class="$mq">Kirim</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -171,6 +347,7 @@ export default {
         berdua: 2,
       },
       input_form: {
+        username: this.$cookie.get("username"),
         name: "",
         phone: "",
         message: "",
@@ -191,6 +368,10 @@ export default {
             this.id = "" + (parseInt(item.id) + 1);
           });
         });
+
+      if (this.id == null) {
+        this.id = "1";
+      }
     },
     submit_rsvp() {
       this.check_data();
@@ -208,8 +389,8 @@ export default {
           .doc(this.id)
           .set(this.input_form)
           .then(() => {
-            this.get_id();
             this.clear_rsvp_form();
+            this.get_id();
           })
           .catch((error) => {
             this.$swal({
@@ -267,10 +448,11 @@ export default {
         attendance: true,
         how: 1,
         createdAt: timestamp,
+        username: this.$cookie.get("username"),
       };
     },
     check_data() {
-      if (!this.attendance) {
+      if (!this.input_form.attendance) {
         this.input_form.how = 0;
       }
       this.input_form.name =
