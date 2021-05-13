@@ -10,7 +10,7 @@
           <iframe
             width="560"
             height="315"
-            src="https://www.youtube.com/embed/pXjpXQwvYAI"
+            :src="youtube"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -136,7 +136,7 @@
           <iframe
             width="795"
             height="448"
-            src="https://www.youtube.com/embed/pXjpXQwvYAI"
+            :src="youtube"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -256,6 +256,7 @@
 import firebase from "@/configs/firebaseConfig";
 const db = firebase.firestore();
 const wishesRef = db.collection("wishes");
+const livestreamRef = db.collection("livestream");
 const currentDate = new Date();
 const timestamp = currentDate.getTime();
 
@@ -264,16 +265,30 @@ export default {
     return {
       id: null,
       input_form: {
-        username: "guest",
+        username: this.$cookie.get("username"),
         name: "",
         message: "",
         createdAt: timestamp,
       },
+      youtube: "https://www.youtube.com/embed/pXjpXQwvYAI",
       message_length: 0,
       wishes_data: [],
     };
   },
   methods: {
+    get_livestream() {
+      livestreamRef
+        .doc("youtube")
+        .get()
+        .then((item) => {
+          if (item.exists) {
+            this.youtube = item.data().url;
+          }
+        })
+        .catch((error) => {
+          console.log("Error getting documents: ", error);
+        });
+    },
     change_message_length() {
       this.message_length = this.input_form.message.length;
     },
@@ -351,7 +366,7 @@ export default {
         name: null,
         message: null,
         createdAt: timestamp,
-        username: "guest",
+        username: this.$cookie.get("username"),
       };
     },
     wish_form_validation() {
@@ -388,6 +403,7 @@ export default {
     },
   },
   created() {
+    this.get_livestream();
     this.get_wishes();
     this.get_id();
   },

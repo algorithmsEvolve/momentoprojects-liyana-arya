@@ -8,7 +8,7 @@
         <h1 class="cover-name-and" :class="$mq">&</h1>
         <h1 class="cover-name-2" :class="$mq">Arya</h1>
       </div>
-      <h1 class="cover-yth" :class="$mq">Kepada Yth: nama tamu</h1>
+      <h1 class="cover-yth" :class="$mq">{{ for_guest }}</h1>
       <div class="button-container" :class="$mq">
         <div
           class="button-buka-undangan"
@@ -35,13 +35,16 @@
 </template>
 
 <script>
-// @ is an alias to /src
+import firebase from "@/configs/firebaseConfig";
+const db = firebase.firestore();
+const guestsRef = db.collection("guests");
 
 export default {
   name: "Cover",
   data() {
     return {
       button_hovered: false,
+      for_guest: "....",
     };
   },
   computed: {
@@ -52,6 +55,25 @@ export default {
     },
   },
   methods: {
+    get_guest() {
+      guestsRef
+        .doc(this.$route.params.username)
+        .get()
+        .then((item) => {
+          if (item.exists) {
+            this.for_guest = "Kepada Yth: " + item.data().name;
+            this.$cookie.set("username", item.data().username, 1);
+            this.$cookie.set("name", item.data().name, 1);
+          } else {
+            this.for_guest = null;
+            this.$cookie.set("username", "guest", 1);
+            this.$cookie.set("name", "guest", 1);
+          }
+        })
+        .catch((error) => {
+          console.log("Error getting documents: ", error);
+        });
+    },
     change_email_icon(bool) {
       this.button_hovered = bool;
     },
@@ -62,6 +84,9 @@ export default {
       audio.play();
       this.$emit("input", true);
     },
+  },
+  created() {
+    this.get_guest();
   },
 };
 </script>

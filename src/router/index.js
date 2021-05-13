@@ -10,6 +10,11 @@ const routes = [
     name: 'Main',
     component: Main
   },
+  {
+    path: '/:username',
+    name: 'Main',
+    component: Main
+  }
 ]
 
 const router = new VueRouter({

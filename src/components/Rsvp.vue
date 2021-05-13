@@ -347,7 +347,7 @@ export default {
         berdua: 2,
       },
       input_form: {
-        username: "guest",
+        username: this.$cookie.get("username"),
         name: "",
         phone: "",
         message: "",
@@ -448,7 +448,7 @@ export default {
         attendance: true,
         how: 1,
         createdAt: timestamp,
-        username: "guest",
+        username: this.$cookie.get("username"),
       };
     },
     check_data() {
