@@ -1,5 +1,25 @@
 <template>
   <div id="opening">
+    <div v-if="$mq == 'desktop'" class="background-icon" :class="$mq">
+      <img
+        src="../assets/app/lily-2.png"
+        alt="lily2-vector"
+        class="lily2-bg-icon"
+        :class="$mq"
+      />
+      <img
+        src="../assets/app/butterflies-1.png"
+        alt="butterfly1-vector"
+        class="butterfly1"
+        :class="$mq"
+      />
+      <img
+        src="../assets/app/butterflies-2.png"
+        alt="butterfly2-vector"
+        class="butterfly2"
+        :class="$mq"
+      />
+    </div>
     <div class="opening-logo-wrapper" :class="$mq">
       <img
         data-aos="zoom-in"

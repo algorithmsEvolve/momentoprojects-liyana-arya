@@ -230,3 +230,20 @@
 .opening-desktop-hide.desktop {
     display: none;
 }
+
+.lily2-bg-icon.desktop {
+    width: 256px;
+    position: absolute;
+    left: 10px;
+    bottom: -300px;
+    transform: scaleX(-1);
+}
+
+.butterfly1.desktop {
+    top: 60%;
+}
+
+.butterfly2.desktop {
+    top: 75%;
+    right: 6%;
+}

@@ -11,7 +11,7 @@
       </div>
       <div
         :class="$mq"
-        class="kisah-kami-slider-container"
+        class="kisah-kami-slider-container hoverable"
         data-aos="fade-up"
         v-view="viewHandler"
         view-in
@@ -22,7 +22,7 @@
           </div>
         </VueSlickCarousel>
       </div>
-      <div class="photo-gallery-container" :class="$mq">
+      <div class="photo-gallery-container hoverable" :class="$mq">
         <VueSlickCarousel v-bind="gallery_settings" v-viewer>
           <div v-for="(item, index) in gallery_img" :key="index">
             <GalleryCard :src="item.img" :index="index" />
@@ -52,7 +52,6 @@
               src="../assets/app/kisah_kami/story.png"
               alt="kisah-kami-story"
               class="kisah-kami-img scrollbox-content"
-              :class="$mq"
             />
           </div>
         </div>
@@ -87,13 +86,14 @@
 .scrollbox {
   width: 10em;
   height: 10em;
-  overflow: auto;
+  overflow: hidden;
   visibility: hidden;
 }
 
 .scrollbox-content,
 .scrollbox:hover,
 .scrollbox:focus {
+  overflow-y: overlay;
   visibility: visible;
 }
 </style>

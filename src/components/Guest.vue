@@ -124,6 +124,14 @@
         <p class="guest-title" data-aos="fade-down" :class="$mq">
           Live Streaming
         </p>
+        <div class="live-streaming-bg" :class="$mq">
+          <img
+            src="../assets/app/line-1.png"
+            alt="line1-icon"
+            class="line1-icon-flip"
+            :class="$mq"
+          />
+        </div>
         <div class="youtube-video" data-aos="fade-up" :class="$mq">
           <iframe
             width="795"

@@ -74,7 +74,7 @@ p.guest-title.mobile {
     padding: 28px 0 0 0;
     font-size: var(--font-12);
     color: var(--primary);
-    font-weight: 500;
+    font-weight: 800;
 }
 
 .ud-container.mobile {
@@ -191,9 +191,9 @@ p.guest-title.desktop {
 .powered.desktop p {
     text-align: center;
     padding: 28px 0 0 0;
-    font-size: var(--font-12);
+    font-size: var(--font-12-md);
     color: var(--primary);
-    font-weight: 500;
+    font-weight: 800;
 }
 
 .ud-container.desktop {
@@ -224,7 +224,20 @@ img.line1-icon.desktop {
     position: absolute;
 }
 
+img.line1-icon-flip.desktop {
+    width: 20vw;
+    left: -119px;
+    top: -130px;
+    position: absolute;
+    transform: scaleX(-1);
+}
+
+.live-streaming-bg.desktop {
+    position: relative;
+}
+
 img.lily5-icon.desktop {
+    display: none;
     width: 18vw;
     position: absolute;
     right: 0;
@@ -237,7 +250,7 @@ img.lily5-icon.desktop {
 }
 
 img.lily6-icon.desktop {
-    width: 20vw;
+    width: 17.5vw;
     position: absolute;
     bottom: 0;
     right: -100px;
