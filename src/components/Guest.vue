@@ -264,6 +264,7 @@ export default {
     return {
       id: null,
       input_form: {
+        username: "guest",
         name: "",
         message: "",
         createdAt: timestamp,
@@ -286,6 +287,10 @@ export default {
             this.id = "" + (parseInt(item.id) + 1);
           });
         });
+
+      if (this.id == null) {
+        this.id = "1";
+      }
     },
     get_wishes() {
       wishesRef
@@ -346,6 +351,7 @@ export default {
         name: null,
         message: null,
         createdAt: timestamp,
+        username: "guest",
       };
     },
     wish_form_validation() {

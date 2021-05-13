@@ -203,7 +203,7 @@ p.guest-title.desktop {
 }
 
 .ud-container.desktop:hover {
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .flex-ud {

@@ -347,6 +347,7 @@ export default {
         berdua: 2,
       },
       input_form: {
+        username: "guest",
         name: "",
         phone: "",
         message: "",
@@ -367,6 +368,10 @@ export default {
             this.id = "" + (parseInt(item.id) + 1);
           });
         });
+
+      if (this.id == null) {
+        this.id = "1";
+      }
     },
     submit_rsvp() {
       this.check_data();
@@ -384,8 +389,8 @@ export default {
           .doc(this.id)
           .set(this.input_form)
           .then(() => {
-            this.get_id();
             this.clear_rsvp_form();
+            this.get_id();
           })
           .catch((error) => {
             this.$swal({
@@ -443,10 +448,11 @@ export default {
         attendance: true,
         how: 1,
         createdAt: timestamp,
+        username: "guest",
       };
     },
     check_data() {
-      if (!this.attendance) {
+      if (!this.input_form.attendance) {
         this.input_form.how = 0;
       }
       this.input_form.name =
