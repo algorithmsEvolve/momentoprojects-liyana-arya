@@ -8,6 +8,9 @@
         <h1 class="cover-name-and" :class="$mq">&</h1>
         <h1 class="cover-name-2" :class="$mq">Arya</h1>
       </div>
+      <div v-if="$route.params.username && loading">
+        <LoadingSpinner></LoadingSpinner>
+      </div>
       <h1 class="cover-yth" :class="$mq">{{ for_guest }}</h1>
       <div class="button-container" :class="$mq">
         <div
@@ -35,16 +38,19 @@
 </template>
 
 <script>
+import LoadingSpinner from "@/components/items/LoadingSpinner";
 import firebase from "@/configs/firebaseConfig";
 const db = firebase.firestore();
 const guestsRef = db.collection("guests");
 
 export default {
   name: "Cover",
+  components: { LoadingSpinner },
   data() {
     return {
+      loading: false,
       button_hovered: false,
-      for_guest: "....",
+      for_guest: "",
     };
   },
   computed: {
@@ -56,23 +62,35 @@ export default {
   },
   methods: {
     get_guest() {
-      guestsRef
-        .doc(this.$route.params.username)
-        .get()
-        .then((item) => {
-          if (item.exists) {
-            this.for_guest = "Kepada Yth: " + item.data().name;
-            this.$cookie.set("username", item.data().username, 1);
-            this.$cookie.set("name", item.data().name, 1);
-          } else {
-            this.for_guest = null;
-            this.$cookie.set("username", "guest", 1);
-            this.$cookie.set("name", "guest", 1);
-          }
-        })
-        .catch((error) => {
-          console.log("Error getting documents: ", error);
-        });
+      if (this.$route.params.username) {
+        this.loading = true;
+
+        this.$cookie.delete("username");
+
+        this.$cookie.delete("name");
+
+        this.$cookie.delete("attendance");
+
+        guestsRef
+          .doc(this.$route.params.username)
+          .get()
+          .then((item) => {
+            if (item.exists) {
+              this.for_guest = "Kepada Yth: " + item.data().name;
+              this.$cookie.set("username", item.data().username, 1);
+              this.$cookie.set("name", item.data().name, 1);
+              this.$cookie.set("attendance", item.data().attendance, 1);
+            } else {
+              this.$cookie.set("username", "guest", 1);
+              this.$cookie.set("name", "guest", 1);
+            }
+
+            this.loading = false;
+          })
+          .catch((error) => {
+            console.log("Error getting documents: ", error);
+          });
+      }
     },
     change_email_icon(bool) {
       this.button_hovered = bool;

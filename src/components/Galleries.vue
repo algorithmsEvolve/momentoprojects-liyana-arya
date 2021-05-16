@@ -22,7 +22,11 @@
           </div>
         </VueSlickCarousel>
       </div>
-      <div class="photo-gallery-container hoverable" :class="$mq">
+      <div
+        data-aos="fade-up"
+        class="photo-gallery-container hoverable"
+        :class="$mq"
+      >
         <VueSlickCarousel v-bind="gallery_settings" v-viewer>
           <div v-for="(item, index) in gallery_img" :key="index">
             <GalleryCard :src="item.img" :index="index" />
@@ -38,7 +42,12 @@
       :class="$mq"
     >
       <div class="kisah-kami-container" :class="$mq">
-        <div class="kisah-kami-desktop-wrapper" :class="$mq">
+        <div
+          class="kisah-kami-desktop-wrapper"
+          :class="$mq"
+          v-view="scrollHandler"
+          view-in
+        >
           <div class="kisah-kami-text" data-aos="fade-down" :class="$mq">
             <p>Kisah Kami</p>
           </div>
@@ -213,6 +222,7 @@ export default {
         cssEase: "linear",
       },
       autoplay_indicator: 0,
+      start_scroll: false,
       indicator_img_change: true,
       story_scroll: 0,
     };
@@ -236,11 +246,17 @@ export default {
         this.autoplay_indicator++;
       }
     },
-  },
-  created() {
-    setInterval(() => {
-      this.scrollnow();
-    }, 6000);
+    scrollHandler() {
+      if (this.autoplay_indicator > 2 && this.start_scroll == false) {
+        this.start_scroll = true;
+
+        setInterval(() => {
+          this.scrollnow();
+        }, 6000);
+      } else {
+        this.autoplay_indicator++;
+      }
+    },
   },
 };
 </script>

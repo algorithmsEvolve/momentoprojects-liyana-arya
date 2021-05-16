@@ -13,7 +13,7 @@
     <template v-if="opened">
       <background2></background2>
       <galleries></galleries>
-      <rsvp></rsvp>
+      <rsvp v-if="$cookie.get('attendance')"></rsvp>
       <guest></guest>
     </template>
     <floating_menu v-if="opened"></floating_menu>

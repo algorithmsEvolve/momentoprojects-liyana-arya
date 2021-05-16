@@ -35,7 +35,8 @@ p.rsvp-title.mobile {
 }
 
 img.lily3-icon.mobile {
-    width: 20vw;
+    width: 15vw;
+    height: 100%;
 }
 
 img.lily4-icon.mobile {
@@ -275,4 +276,14 @@ img.lily4-icon.desktop {
 
   .radio-item.desktop label {
       font-size: var(--font-12-md);
+  }
+
+  .rsvp-inserted.desktop {
+    display: flex;
+    align-items: center;
+  }
+
+  .rsvp-title.inserted.desktop {
+    padding: 0 2rem;
+    width: unset;
   }
