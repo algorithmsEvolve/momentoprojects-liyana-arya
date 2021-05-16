@@ -28,6 +28,7 @@
         v-scroll-to="'#gallery'"
       />
       <img
+        v-if="$cookie.get('attendance')"
         src="../../assets/icons/wedding-planning.svg"
         alt="wedding-planning"
         class="fb-icon"
