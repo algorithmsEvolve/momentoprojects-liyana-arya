@@ -62,14 +62,14 @@ export default {
   },
   methods: {
     get_guest() {
+      this.$cookie.delete("username");
+
+      this.$cookie.delete("name");
+
+      this.$cookie.delete("attendance");
+
       if (this.$route.params.username) {
         this.loading = true;
-
-        this.$cookie.delete("username");
-
-        this.$cookie.delete("name");
-
-        this.$cookie.delete("attendance");
 
         guestsRef
           .doc(this.$route.params.username)
@@ -88,6 +88,8 @@ export default {
             this.loading = false;
           })
           .catch((error) => {
+            this.loading = false;
+
             console.log("Error getting documents: ", error);
           });
       }
