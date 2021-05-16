@@ -468,6 +468,8 @@ export default {
                 console.log(error);
               });
 
+            this.$cookie.set("attendance", data.attendance, 1);
+
             this.clear_rsvp_form();
 
             this.edit_rsvp = false;
