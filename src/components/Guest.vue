@@ -92,6 +92,9 @@
               </div>
             </div>
           </div>
+          <div v-if="loading">
+            <LoadingSpinner></LoadingSpinner>
+          </div>
           <div class="button-container" :class="$mq">
             <div
               class="button-buka-undangan"
@@ -213,6 +216,9 @@
                     </div>
                   </div>
                 </div>
+                <div v-if="loading">
+                  <LoadingSpinner></LoadingSpinner>
+                </div>
                 <div class="button-container" :class="$mq">
                   <div
                     class="button-buka-undangan"
@@ -253,6 +259,7 @@
 </template>
 
 <script>
+import LoadingSpinner from "@/components/items/LoadingSpinner";
 import firebase from "@/configs/firebaseConfig";
 const db = firebase.firestore();
 const wishesRef = db.collection("wishes");
@@ -261,8 +268,10 @@ const currentDate = new Date();
 const timestamp = currentDate.getTime();
 
 export default {
+  components: { LoadingSpinner },
   data() {
     return {
+      loading: false,
       id: null,
       input_form: {
         username: this.$cookie.get("username"),
@@ -326,23 +335,32 @@ export default {
         });
     },
     submit_wish() {
+      this.loading = true;
+
       this.check_data();
+
       let validate = this.wish_form_validation();
+
       if (validate.status == true) {
-        this.$swal({
-          icon: "success",
-          html:
-            "<h5>Liyana & Arya Wedding</h5><h6>Terimakasih atas doa dan ucapannya :)</h6>",
-          showConfirmButton: true,
-          confirmButtonColor: "#3F6D97",
-          iconColor: "#3F6D97",
-        });
         wishesRef
           .doc(this.id)
           .set(this.input_form)
           .then(() => {
-            this.get_id();
+            this.$swal({
+              icon: "success",
+              html:
+                "<h5>Liyana & Arya Wedding</h5><h6>Terimakasih atas doa dan ucapannya :)</h6>",
+              showConfirmButton: true,
+              confirmButtonColor: "#3F6D97",
+              iconColor: "#3F6D97",
+            });
+
+            this.loading = false;
+
             this.clear_wish_form();
+
+            this.get_id();
+
             this.get_wishes();
           })
           .catch((error) => {
@@ -352,6 +370,8 @@ export default {
                 "<h6>Terjadi kesalahan. Mohon ulangi beberapa menit lagi :(</h6>",
               showConfirmButton: true,
             });
+
+            this.loading = false;
           });
       } else {
         this.$swal({
@@ -359,6 +379,8 @@ export default {
           html: validate.message,
           showConfirmButton: true,
         });
+
+        this.loading = false;
       }
     },
     clear_wish_form() {

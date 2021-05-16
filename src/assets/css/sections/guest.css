@@ -123,6 +123,7 @@ p.guest-title.desktop {
     font-family: var(--ants);
     text-align: center;
     padding: 20px 0;
+    pointer-events: none;
 }
 
 .youtube-video.desktop {
