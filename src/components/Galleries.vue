@@ -45,10 +45,10 @@
         <div
           class="kisah-kami-desktop-wrapper"
           :class="$mq"
-          v-view="scrollHandler(1)"
+          v-view="scrollHandler"
           view-in
-          @mouseover="scrollHandler(0)"
-          @mouseleave="scrollHandler(2)"
+          @mouseover="scroll(false)"
+          @mouseleave="scroll(true)"
         >
           <div class="kisah-kami-text" data-aos="fade-down" :class="$mq">
             <p>Kisah Kami</p>
@@ -228,9 +228,21 @@ export default {
       indicator_img_change: true,
       story_scroll: 0,
       scroll_interval: 0.06,
+      interval_func: null,
     };
   },
   methods: {
+    scroll(turn) {
+      if (turn === false) {
+        clearInterval(this.interval_func);
+      } else {
+        this.story_scroll = this.$refs.story.scrollTop;
+
+        this.interval_func = setInterval(() => {
+          this.scrollnow();
+        }, 1);
+      }
+    },
     scrollnow(event) {
       if (this.story_scroll >= 510) {
         this.story_scroll = 0;
@@ -249,24 +261,14 @@ export default {
         this.autoplay_indicator++;
       }
     },
-    scrollHandler(turn) {
-      global.interval;
-
-      if (turn === 1) {
-        if (this.autoplay_indicator > 2 && this.start_scroll == false) {
-          this.start_scroll = true;
-
-          global.interval = setInterval(() => {
-            this.scrollnow();
-          }, 1);
-        } else {
-          this.autoplay_indicator++;
-        }
-      } else if (turn === 0) {
-        clearInterval(global.interval);
+    scrollHandler() {
+      if (this.autoplay_indicator > 2 && this.start_scroll == false) {
+        this.start_scroll = true;
+        this.interval_func = setInterval(() => {
+          this.scrollnow();
+        }, 1);
       } else {
-        this.story_scroll = this.$refs.story.scrollTop;
-        this.start_scroll = false;
+        this.autoplay_indicator++;
       }
     },
   },
