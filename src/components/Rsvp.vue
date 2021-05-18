@@ -226,7 +226,7 @@
         <template v-if="$cookie.get('attendance') == 0 || edit_rsvp">
           <div class="form-rsvp-wrapper" :class="$mq">
             <div class="flex" :class="$mq">
-              <div class="form-group" :class="$mq">
+              <div class="form-group right" :class="$mq">
                 <div class="rsvp-label" :class="$mq">
                   <p>Nama</p>
                 </div>

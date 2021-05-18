@@ -67,7 +67,8 @@
             <h6 class="opening-nama" :class="$mq">Liyana Adhiningrum</h6>
             <h6 class="opening-nama2" :class="$mq">Putri Pertama:</h6>
             <h6 class="opening-nama2" :class="$mq">
-              Mudjijadi<br />&<br />Lilis Suryanti (Alm.)
+              Mudjijadi<br v-if="$mq === 'mobile'" />
+              & <br v-if="$mq === 'mobile'" />Lilis Suryanti (Alm.)
             </h6>
           </div>
           <div
@@ -85,7 +86,8 @@
             <h6 class="opening-nama" :class="$mq">Arya Ghiri</h6>
             <h6 class="opening-nama2" :class="$mq">Putra Kedua:</h6>
             <h6 class="opening-nama2" :class="$mq">
-              Sumarsono<br />&<br />Budi Rahayu
+              Sumarsono<br v-if="$mq === 'mobile'" />
+              & <br v-if="$mq === 'mobile'" />Budi Rahayu
             </h6>
           </div>
         </div>
@@ -116,9 +118,14 @@
                     class="opening-icon"
                     :class="$mq"
                   />
-                  <h6 class="opening-tanggal-font" :class="$mq">
-                    12.00 - 14.00 WIB
-                  </h6>
+                  <div style="display: block">
+                    <h6 class="opening-tanggal-font" :class="$mq">
+                      Akad : 09.00 WIB
+                    </h6>
+                    <h6 class="opening-tanggal-font" :class="$mq">
+                      Resepsi : 11.00 - 12.00 WIB
+                    </h6>
+                  </div>
                 </div>
               </div>
               <div class="opening-tanggal-group alamat" :class="$mq">
