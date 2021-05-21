@@ -120,10 +120,10 @@
                   />
                   <div style="display: block">
                     <h6 class="opening-tanggal-font" :class="$mq">
-                      Akad : 09.00 WIB
+                      Akad : 10.00 WIB - selesai
                     </h6>
                     <h6 class="opening-tanggal-font" :class="$mq">
-                      Resepsi : 11.00 - 12.00 WIB
+                      Resepsi : 13.00 - 14.30 WIB
                     </h6>
                   </div>
                 </div>

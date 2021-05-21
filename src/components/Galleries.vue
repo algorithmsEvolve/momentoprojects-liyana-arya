@@ -210,8 +210,10 @@ export default {
         variableWidth: true,
         autoplay: false,
         autoplaySpeed: 6000,
+        arrows: false,
       },
       gallery_settings: {
+        arrows: false,
         accessibility: false,
         dots: true,
         infinite: true,
@@ -227,7 +229,7 @@ export default {
       start_scroll: false,
       indicator_img_change: true,
       story_scroll: 0,
-      scroll_interval: 0.06,
+      scroll_interval: 0.1,
       interval_func: null,
     };
   },
@@ -251,7 +253,7 @@ export default {
       }
       this.$refs.story.scrollTo({
         top: this.story_scroll,
-        // behavior: "auto",
+        // behavior: "smooth",
       });
     },
     viewHandler() {

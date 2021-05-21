@@ -18,7 +18,10 @@
           :class="$mq"
           @mouseenter="change_email_icon(true)"
           @mouseleave="change_email_icon(false)"
-          @click="open()"
+          @click="
+            change_email_icon(true);
+            open_with_delay();
+          "
         >
           <div class="button-bu-icon" :class="$mq">
             <img
@@ -99,10 +102,25 @@ export default {
     },
     open() {
       var audio = new Audio(
-        "https://firebasestorage.googleapis.com/v0/b/liyana-arya-wedding.appspot.com/o/BTS%20(%EB%B0%A9%ED%83%84%EC%86%8C%EB%85%84%EB%8B%A8)%20-%20Answer%20Love%20Myself%20Piano%20Cover.mp3?alt=media&token=a1abd762-3147-4f3b-b1e5-7a62d467dbef"
+        "https://firebasestorage.googleapis.com/v0/b/liyana-arya-wedding.appspot.com/o/BTS-Answer-Love-Myself-Piano-Cov.mp3?alt=media&token=8fcd605b-bd32-40d6-976d-acdb1d6f401c"
       ); // path to file
+      if (typeof audio.loop == "boolean") {
+        audio.loop = true;
+      } else {
+        audio.addEventListener(
+          "ended",
+          function () {
+            this.currentTime = 0;
+            this.play();
+          },
+          false
+        );
+      }
       audio.play();
       this.$emit("input", true);
+    },
+    open_with_delay() {
+      setTimeout(() => this.open(), 200);
     },
   },
   created() {
