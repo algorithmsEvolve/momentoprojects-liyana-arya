@@ -84,6 +84,7 @@ p.guest-title.mobile {
 
 .powered.mobile {
     margin-bottom: 8vh;
+    text-align: center;
 }
 
 img.line2-icon.mobile {
@@ -115,6 +116,11 @@ img.lily6-icon.mobile {
     font-size: var(--font-12);
     color: var(--primary);
     text-align: right;
+}
+
+.momentoprojects-logo.mobile {
+    width: 95px;
+    padding: 28px 0 0 0;
 }
 
 /* DESKTOP */
@@ -217,6 +223,7 @@ p.guest-title.desktop {
 
 .powered.desktop {
     margin-bottom: 8vh;
+    text-align: center;
 }
 
 img.line1-icon.desktop {
@@ -263,4 +270,9 @@ img.lily6-icon.desktop {
     font-size: var(--font-12);
     color: var(--primary);
     text-align: right;
+}
+
+.momentoprojects-logo.desktop {
+    width: 152px;
+    padding: 28px 0 0 0;
 }

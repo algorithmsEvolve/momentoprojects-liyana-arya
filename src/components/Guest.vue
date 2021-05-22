@@ -107,7 +107,12 @@
             </div>
           </div>
           <div class="powered" :class="$mq">
-            <p>Powered by: momentoprojects.id</p>
+            <img
+              src="../assets/logo.png"
+              alt="momentoprojects-logo"
+              class="momentoprojects-logo"
+              :class="$mq"
+            />
           </div>
         </div>
       </div>
@@ -235,7 +240,12 @@
           </div>
         </div>
         <div class="powered" :class="$mq">
-          <p>Powered by: momentoprojects.id</p>
+          <img
+            src="../assets/logo.png"
+            alt="momentoprojects-logo"
+            class="momentoprojects-logo"
+            :class="$mq"
+          />
         </div>
         <div class="guest-line-bottom">
           <img
