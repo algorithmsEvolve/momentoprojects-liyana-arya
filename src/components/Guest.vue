@@ -107,12 +107,14 @@
             </div>
           </div>
           <div class="powered" :class="$mq">
-            <img
-              src="../assets/logo.png"
-              alt="momentoprojects-logo"
-              class="momentoprojects-logo"
-              :class="$mq"
-            />
+            <a :href="mail_to" :class="$mq">
+              <img
+                src="../assets/logo.png"
+                alt="momentoprojects-logo"
+                class="momentoprojects-logo"
+                :class="$mq"
+              />
+            </a>
           </div>
         </div>
       </div>
@@ -240,12 +242,14 @@
           </div>
         </div>
         <div class="powered" :class="$mq">
-          <img
-            src="../assets/logo.png"
-            alt="momentoprojects-logo"
-            class="momentoprojects-logo"
-            :class="$mq"
-          />
+          <a :href="mail_to" :class="$mq">
+            <img
+              src="../assets/logo.png"
+              alt="momentoprojects-logo"
+              class="momentoprojects-logo"
+              :class="$mq"
+            />
+          </a>
         </div>
         <div class="guest-line-bottom">
           <img
@@ -292,6 +296,8 @@ export default {
       youtube: "https://www.youtube.com/embed/pXjpXQwvYAI",
       message_length: 0,
       wishes_data: [],
+      mail_to:
+        "mailto:momentoprojects.id@gmail.com?subject=Halo, Momento Projects ID! Mau nanya nih!",
     };
   },
   methods: {
