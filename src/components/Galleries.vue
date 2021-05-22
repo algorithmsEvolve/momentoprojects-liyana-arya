@@ -202,7 +202,7 @@ export default {
       ],
       settings: {
         dots: false,
-        infinite: false,
+        infinite: true,
         centerMode: true,
         centerPadding: "20px",
         slidesToShow: 1,
@@ -223,7 +223,7 @@ export default {
         autoplay: true,
         speed: 400,
         autoplaySpeed: 6000,
-        cssEase: "linear",
+        // cssEase: "linear",
       },
       autoplay_indicator: 0,
       start_scroll: false,
