@@ -71,6 +71,10 @@ h1.cover-title.mobile {
     width: 1.25rem;
 }
 
+.blur.mobile {
+    opacity: 0
+}
+
 /* DESKTOP */
 
 .cover-content.desktop {
@@ -141,4 +145,8 @@ h1.cover-title.desktop {
     align-self: center;
     padding: 0 12px;
     width: 1.25rem;
+}
+
+.blur.desktop {
+    opacity: 0
 }

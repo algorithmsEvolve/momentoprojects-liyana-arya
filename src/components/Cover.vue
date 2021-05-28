@@ -1,15 +1,15 @@
 <template>
   <!-- end vector background -->
   <div class="cover-content overflow-hidden" :class="$mq" data-aos="zoom-in">
-    <div class="cover-middle" :class="$mq">
+    <div v-if="$route.params.username && loading">
+      <MomentoLoading></MomentoLoading>
+    </div>
+    <div class="cover-middle" :class="[$mq, loading ? 'blur' : '']">
       <h1 class="cover-title" :class="$mq">Undangan Pernikahan</h1>
       <div class="cover-inside" :class="$mq">
         <h1 class="cover-name-1" :class="$mq">Liyana</h1>
         <h1 class="cover-name-and" :class="$mq">&</h1>
         <h1 class="cover-name-2" :class="$mq">Arya</h1>
-      </div>
-      <div v-if="$route.params.username && loading">
-        <LoadingSpinner></LoadingSpinner>
       </div>
       <h1 class="cover-yth" :class="$mq">{{ for_guest }}</h1>
       <div class="button-container" :class="$mq">
@@ -42,13 +42,14 @@
 
 <script>
 import LoadingSpinner from "@/components/items/LoadingSpinner";
+import MomentoLoading from "@/components/items/MomentoLoading";
 import firebase from "@/configs/firebaseConfig";
 const db = firebase.firestore();
 const guestsRef = db.collection("guests");
 
 export default {
   name: "Cover",
-  components: { LoadingSpinner },
+  components: { LoadingSpinner, MomentoLoading },
   data() {
     return {
       loading: false,
@@ -87,11 +88,10 @@ export default {
               this.$cookie.set("username", "guest", 1);
               this.$cookie.set("name", "guest", 1);
             }
-
-            this.loading = false;
+            setTimeout(() => (this.loading = false), 800);
           })
           .catch((error) => {
-            this.loading = false;
+            setTimeout(() => (this.loading = false), 800);
 
             console.log("Error getting documents: ", error);
           });
