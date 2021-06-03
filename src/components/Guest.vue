@@ -109,7 +109,7 @@
           <div class="powered" :class="$mq">
             <a :href="mail_to" :class="$mq">
               <img
-                src="../assets/logo.png"
+                src="../assets/logo.svg"
                 alt="momentoprojects-logo"
                 class="momentoprojects-logo"
                 :class="$mq"
@@ -244,7 +244,7 @@
         <div class="powered" :class="$mq">
           <a :href="mail_to" :class="$mq">
             <img
-              src="../assets/logo.png"
+              src="../assets/logo.svg"
               alt="momentoprojects-logo"
               class="momentoprojects-logo"
               :class="$mq"

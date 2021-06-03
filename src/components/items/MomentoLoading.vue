@@ -1,7 +1,12 @@
 <template>
   <div>
     <div class="spinner">
-      <img src="@/assets/momentospin.gif" alt="momento loading" width="150" />
+      <img
+        src="@/assets/momentospin.png"
+        class="spin-logo"
+        alt="momento loading"
+        width="100"
+      />
     </div>
   </div>
 </template>
@@ -18,5 +23,18 @@ export default {};
   bottom: 50vh;
   right: 0;
   z-index: 100;
+}
+
+.spin-logo {
+  animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }
 </style>
