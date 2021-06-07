@@ -287,6 +287,7 @@ export default {
       let now = new Date().getTime();
 
       let distance = countDownDate - now;
+
       if (distance >= 0) {
         setTimeout(() => {
           // Time calculations for days, hours, minutes and seconds
@@ -298,6 +299,8 @@ export default {
           this.detik = Math.floor((distance % (1000 * 60)) / 1000);
           this.get_count_down();
         }, 1000);
+      } else {
+        this.hari = this.jam = this.menit = this.detik = 0;
       }
     },
   },
