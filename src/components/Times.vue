@@ -2,7 +2,12 @@
   <div id="time">
     <!-- MOBILE -->
     <div v-if="$mq == 'mobile'" class="desktop-hide" :class="$mq">
-      <div class="countdown-container" data-aos="fade-down" :class="$mq">
+      <div
+        v-if="distance > 0"
+        class="countdown-container"
+        data-aos="fade-down"
+        :class="$mq"
+      >
         <div class="countdown-wrapper" :class="$mq">
           <div class="count" :class="$mq">
             <div class="time" :class="$mq">
@@ -26,6 +31,14 @@
             </div>
           </div>
         </div>
+      </div>
+      <div v-else class="just-married-wrapper" :class="$mq">
+        <img
+          src="../assets/app/just_married.svg"
+          alt="just-married-icon"
+          class="just-married-icon"
+          :class="$mq"
+        />
       </div>
       <div class="maps-container" data-aos="fade-up" :class="$mq">
         <div class="maps" :class="$mq">
@@ -169,7 +182,12 @@
           </div>
         </div>
         <div class="right" :class="$mq">
-          <div class="countdown-container" data-aos="fade-down" :class="$mq">
+          <div
+            v-if="distance > 0"
+            class="countdown-container"
+            data-aos="fade-down"
+            :class="$mq"
+          >
             <div class="countdown-wrapper" :class="$mq">
               <div class="count" :class="$mq">
                 <div class="time" :class="$mq">
@@ -193,6 +211,14 @@
                 </div>
               </div>
             </div>
+          </div>
+          <div v-else class="just-married-wrapper" :class="$mq">
+            <img
+              src="../assets/app/just_married.svg"
+              alt="just-married-icon"
+              class="just-married-icon"
+              :class="$mq"
+            />
           </div>
           <div
             class="prokes-container padding-container"
@@ -279,6 +305,7 @@ export default {
       jam: null,
       menit: null,
       detik: null,
+      distance: 0,
     };
   },
   methods: {
@@ -286,17 +313,20 @@ export default {
       let countDownDate = new Date("Jun 5, 2021 12:00:00").getTime();
       let now = new Date().getTime();
 
-      let distance = countDownDate - now;
+      this.distance = countDownDate - now;
+      this.distance = 0;
 
-      if (distance >= 0) {
+      if (this.distance > 0) {
         setTimeout(() => {
           // Time calculations for days, hours, minutes and seconds
-          this.hari = Math.floor(distance / (1000 * 60 * 60 * 24));
+          this.hari = Math.floor(this.distance / (1000 * 60 * 60 * 24));
           this.jam = Math.floor(
-            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+            (this.distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
           );
-          this.menit = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-          this.detik = Math.floor((distance % (1000 * 60)) / 1000);
+          this.menit = Math.floor(
+            (this.distance % (1000 * 60 * 60)) / (1000 * 60)
+          );
+          this.detik = Math.floor((this.distance % (1000 * 60)) / 1000);
           this.get_count_down();
         }, 1000);
       } else {

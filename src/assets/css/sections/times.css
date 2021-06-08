@@ -96,6 +96,11 @@
     padding: 1rem 0 0 0;
 }
 
+.just-married-wrapper.mobile {
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
 /* DESKTOP */
 
 .times-desktop-container.desktop {
@@ -210,4 +215,9 @@
 
 .padding-container.desktop {
     padding: 0;
+}
+
+.just-married-wrapper.desktop {
+    text-align: center;
+    padding-bottom: 1rem;
 }
