@@ -34,7 +34,7 @@
       </div>
       <div v-else class="just-married-wrapper" :class="$mq">
         <img
-          src="../assets/app/just_married.svg"
+          src="../assets/app/just_married2.svg"
           alt="just-married-icon"
           class="just-married-icon"
           :class="$mq"
@@ -214,7 +214,7 @@
           </div>
           <div v-else class="just-married-wrapper" :class="$mq">
             <img
-              src="../assets/app/just_married.svg"
+              src="../assets/app/just_married2.svg"
               alt="just-married-icon"
               class="just-married-icon"
               :class="$mq"

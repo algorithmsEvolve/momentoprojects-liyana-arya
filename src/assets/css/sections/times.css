@@ -101,6 +101,10 @@
     padding-bottom: 1rem;
 }
 
+.just-married-icon.mobile {
+    width: 12em;
+}
+
 /* DESKTOP */
 
 .times-desktop-container.desktop {
@@ -219,5 +223,5 @@
 
 .just-married-wrapper.desktop {
     text-align: center;
-    padding-bottom: 1rem;
+    padding: 1rem 0 2rem 0;
 }
