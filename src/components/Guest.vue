@@ -54,6 +54,7 @@
           />
         </div>
         <div class="form-ucapan-wrapper" data-aos="fade-up" :class="$mq">
+          <!--
           <div class="form-group" :class="$mq">
             <div class="rsvp-label" :class="$mq">
               <p>Nama</p>
@@ -70,6 +71,8 @@
               />
             </div>
           </div>
+          -->
+          <!--
           <div class="form-group" :class="$mq">
             <div class="rsvp-label" :class="$mq">
               <p>Pesan</p>
@@ -106,6 +109,7 @@
               </div>
             </div>
           </div>
+          -->
           <div class="powered" :class="$mq">
             <a :href="mail_to" :class="$mq">
               <img
@@ -183,6 +187,7 @@
                 </template>
               </div>
             </div>
+            <!--
             <div>
               <div class="form-ucapan-wrapper" data-aos="fade-up" :class="$mq">
                 <div class="form-group" :class="$mq">
@@ -239,6 +244,7 @@
                 </div>
               </div>
             </div>
+                -->
           </div>
         </div>
         <div class="powered" :class="$mq">
@@ -364,8 +370,7 @@ export default {
           .then(() => {
             this.$swal({
               icon: "success",
-              html:
-                "<h5>Liyana & Arya Wedding</h5><h6>Terimakasih atas doa dan ucapannya :)</h6>",
+              html: "<h5>Liyana & Arya Wedding</h5><h6>Terimakasih atas doa dan ucapannya :)</h6>",
               showConfirmButton: true,
               confirmButtonColor: "#3F6D97",
               iconColor: "#3F6D97",
@@ -382,8 +387,7 @@ export default {
           .catch((error) => {
             this.$swal({
               icon: "error",
-              html:
-                "<h6>Terjadi kesalahan. Mohon ulangi beberapa menit lagi :(</h6>",
+              html: "<h6>Terjadi kesalahan. Mohon ulangi beberapa menit lagi :(</h6>",
               showConfirmButton: true,
             });
 
