@@ -204,7 +204,7 @@ p.guest-title.desktop {
 }
 
 .ud-container.desktop {
-    width: 100vw;
+    width: 50vw;
     max-height: 453px;
     overflow-y: hidden;
 }
@@ -276,14 +276,3 @@ img.lily6-icon.desktop {
     width: 152px;
     padding: 28px 0 0 0;
 }
-
-/* for after just married purposes */
-.ucapan-doa.desktop {
-    width: 55vw;
-    margin: auto;
-}
-
-.flex-ud {
-    padding-right: 0 !important;
-}
-/* end for after just married purposes */
