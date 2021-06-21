@@ -14,7 +14,7 @@
       <background2></background2>
       <galleries></galleries>
       <rsvp v-if="$cookie.get('attendance')"></rsvp>
-      <guest></guest>
+      <guest v-model="video_played"></guest>
     </template>
     <floating_menu v-if="opened"></floating_menu>
     <!-- </transition> -->
@@ -51,15 +51,43 @@ export default {
   watch: {
     opened: function () {
       import("@/assets/css/styling/overflow_scroll.css");
+      this.playMusic(this.video_played);
+    },
+    video_played: function (data) {
+      this.playMusic(data);
     },
   },
   data() {
     return {
       opened: false,
       test: "hidden",
+      video_played: false,
+      audio: new Audio(
+        "https://firebasestorage.googleapis.com/v0/b/liyana-arya-wedding.appspot.com/o/BTS-Answer-Love-Myself-Piano-Cov.mp3?alt=media&token=8fcd605b-bd32-40d6-976d-acdb1d6f401c"
+      ),
     };
   },
-  methods: {},
+  methods: {
+    playMusic(param) {
+      if (param == false) {
+        if (typeof this.audio.loop == "boolean") {
+          this.audio.loop = true;
+        } else {
+          this.audio.addEventListener(
+            "ended",
+            function () {
+              this.currentTime = 0;
+              this.play();
+            },
+            false
+          );
+        }
+        this.audio.play();
+      } else {
+        this.audio.pause();
+      }
+    },
+  },
   created() {},
 };
 </script>

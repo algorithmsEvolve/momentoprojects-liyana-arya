@@ -16,6 +16,11 @@ p.guest-title.mobile {
     height: 45vw;
 }
 
+.youtube-video.mobile video {
+    width: 100%;
+    height: 45vw;
+}
+
 .ud-wrapper.mobile {
     text-align: center;
     padding: 0 0 1rem 0;
@@ -276,3 +281,7 @@ img.lily6-icon.desktop {
     width: 152px;
     padding: 28px 0 0 0;
 }
+
+video{
+    object-fit: cover;
+ }

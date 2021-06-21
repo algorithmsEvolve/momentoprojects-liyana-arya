@@ -3,10 +3,11 @@
     <!--MOBILE -->
     <div v-if="$mq == 'mobile'" class="guest-mobile" :class="$mq">
       <div class="padding-container" :class="$mq">
-        <p class="guest-title" data-aos="fade-down" :class="$mq">
+        <!--<p class="guest-title" data-aos="fade-down" :class="$mq">
           Live Streaming
-        </p>
+        </p> -->
         <div class="youtube-video" data-aos="fade-up" :class="$mq">
+          <!--
           <iframe
             width="560"
             height="315"
@@ -16,6 +17,23 @@
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
           ></iframe>
+          -->
+          <video
+            width="560"
+            height="315"
+            poster="../assets/app/video_thumbnail.png"
+            controls
+            style="object-fit: cover"
+            @play="pauseMusic"
+            @pause="playMusic"
+            :class="$mq"
+          >
+            <source
+              src="https://firebasestorage.googleapis.com/v0/b/liyana-arya-wedding.appspot.com/o/1%20menit.05.06.21.mp4?alt=media&token=6b70ac20-1fd8-46d0-aff2-163606588c38"
+              type="video/mp4"
+            />
+            Your browser does not support HTML video.
+          </video>
         </div>
         <div class="ucapan-doa" :class="$mq">
           <div class="ud-line-img" :class="$mq">
@@ -132,7 +150,7 @@
     <div v-if="$mq == 'desktop'" class="guest-desktop" :class="$mq">
       <div class="padding-container" :class="$mq">
         <p class="guest-title" data-aos="fade-down" :class="$mq">
-          Live Streaming
+          <!-- Live Streaming -->
         </p>
         <div class="live-streaming-bg" :class="$mq">
           <img
@@ -143,7 +161,21 @@
           />
         </div>
         <div class="youtube-video" data-aos="fade-up" :class="$mq">
-          <iframe
+          <video
+            width="795"
+            height="448"
+            poster="../assets/app/video_thumbnail.png"
+            controls
+            @play="pauseMusic"
+            @pause="playMusic"
+          >
+            <source
+              src="https://firebasestorage.googleapis.com/v0/b/liyana-arya-wedding.appspot.com/o/1%20menit.05.06.21.mp4?alt=media&token=6b70ac20-1fd8-46d0-aff2-163606588c38"
+              type="video/mp4"
+            />
+            Your browser does not support HTML video.
+          </video>
+          <!-- <iframe
             width="795"
             height="448"
             :src="youtube"
@@ -151,7 +183,7 @@
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
-          ></iframe>
+          ></iframe> -->
         </div>
         <div class="ucapan-doa" :class="$mq">
           <div class="ud-line-img" :class="$mq">
@@ -364,8 +396,7 @@ export default {
           .then(() => {
             this.$swal({
               icon: "success",
-              html:
-                "<h5>Liyana & Arya Wedding</h5><h6>Terimakasih atas doa dan ucapannya :)</h6>",
+              html: "<h5>Liyana & Arya Wedding</h5><h6>Terimakasih atas doa dan ucapannya :)</h6>",
               showConfirmButton: true,
               confirmButtonColor: "#3F6D97",
               iconColor: "#3F6D97",
@@ -382,8 +413,7 @@ export default {
           .catch((error) => {
             this.$swal({
               icon: "error",
-              html:
-                "<h6>Terjadi kesalahan. Mohon ulangi beberapa menit lagi :(</h6>",
+              html: "<h6>Terjadi kesalahan. Mohon ulangi beberapa menit lagi :(</h6>",
               showConfirmButton: true,
             });
 
@@ -438,6 +468,12 @@ export default {
         this.input_form.message.slice(0, 0) +
         this.input_form.message.charAt(0).toUpperCase() +
         this.input_form.message.slice(1);
+    },
+    pauseMusic() {
+      this.$emit("input", true);
+    },
+    playMusic() {
+      this.$emit("input", false);
     },
   },
   created() {

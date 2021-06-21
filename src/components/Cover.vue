@@ -101,22 +101,6 @@ export default {
       this.button_hovered = bool;
     },
     open() {
-      var audio = new Audio(
-        "https://firebasestorage.googleapis.com/v0/b/liyana-arya-wedding.appspot.com/o/BTS-Answer-Love-Myself-Piano-Cov.mp3?alt=media&token=8fcd605b-bd32-40d6-976d-acdb1d6f401c"
-      ); // path to file
-      if (typeof audio.loop == "boolean") {
-        audio.loop = true;
-      } else {
-        audio.addEventListener(
-          "ended",
-          function () {
-            this.currentTime = 0;
-            this.play();
-          },
-          false
-        );
-      }
-      audio.play();
       this.$emit("input", true);
     },
     open_with_delay() {

@@ -310,11 +310,11 @@ export default {
   },
   methods: {
     get_count_down() {
-      let countDownDate = new Date("Jun 5, 2021 12:00:00").getTime();
+      let countDownDate = new Date("Jul 14, 2021 14:40:00").getTime();
       let now = new Date().getTime();
 
       this.distance = countDownDate - now;
-      this.distance = 0;
+      // this.distance = 0;
 
       if (this.distance > 0) {
         setTimeout(() => {
