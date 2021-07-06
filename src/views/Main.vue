@@ -88,7 +88,14 @@ export default {
       }
     },
   },
-  created() {},
+  created() {
+    window.addEventListener("beforeunload", function (event) {
+      window.scroll({
+        top: 0,
+        left: 0,
+      });
+    });
+  },
 };
 </script>
 
